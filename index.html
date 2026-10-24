@@ -3,59 +3,35 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="dark" />
     <link rel="icon" href="data:," />
     <title>Systems Collapse Chart</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <style>
       :root {
         color-scheme: dark;
-        --bg: #0d0e10;
-        --bg-2: #121316;
-        --surface: #17181c;
-        --surface-2: #1d1f24;
-        --line: #2c2e35;
-        --line-strong: #3d404a;
-        --ink: #ece9e2;
-        --ink-2: #b9b5aa;
-        --ink-3: #8b877d;
-        --accent: #e07a2e;
-        --accent-2: #c94f2c;
-        --accent-soft: rgba(224, 122, 46, 0.14);
-        --beam-bg: #ece9e2;
-        --beam-ink: #141518;
-        --pillar-top: #23252b;
-        --pillar-bottom: #141519;
-        --crack: #e07a2e;
-        --chip-bg: #23252b;
-        --good: #9db98a;
-        --shadow: rgba(0,0,0,0.45);
-      }
-      @media (prefers-color-scheme: light) {
-        :root {
-          color-scheme: light;
-          --bg: #e9e6df;
-          --bg-2: #dfdbd2;
-          --surface: #f4f1ea;
-          --surface-2: #ece8de;
-          --line: #cfc9bb;
-          --line-strong: #a9a292;
-          --ink: #1b1c1e;
-          --ink-2: #4c4a44;
-          --ink-3: #77736a;
-          --accent: #b4531d;
-          --accent-2: #9c3a1e;
-          --accent-soft: rgba(180, 83, 29, 0.12);
-          --beam-bg: #1b1c1e;
-          --beam-ink: #f4f1ea;
-          --pillar-top: #f8f5ee;
-          --pillar-bottom: #e3ded2;
-          --crack: #b4531d;
-          --chip-bg: #e7e2d6;
-          --shadow: rgba(60,50,30,0.18);
-        }
+        --bg: #111110;
+        --bg-2: #111110;
+        --surface: #171716;
+        --surface-2: #1c1b1a;
+        --line: #33302d;
+        --line-strong: #f2efe9;
+        --ink: #f5f3ef;
+        --ink-2: #b3a99e;
+        --ink-3: #8a8178;
+        --accent: #cf4a2a;
+        --accent-2: #cf4a2a;
+        --accent-soft: rgba(207, 74, 42, 0.14);
+        --beam-bg: #1f1d1b;
+        --beam-ink: #ffffff;
+        --pillar-top: #171716;
+        --pillar-bottom: #171716;
+        --crack: #cf4a2a;
+        --chip-bg: #171716;
+        --good: #b3a99e;
+        --shadow: none;
       }
 
       * { box-sizing: border-box; }
@@ -64,61 +40,219 @@
         margin: 0;
         background: var(--bg);
         color: var(--ink);
-        font-family: "IBM Plex Sans", system-ui, sans-serif;
-        line-height: 1.55;
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-size: 17px;
+        line-height: 1.7;
       }
       .wrap {
         max-width: 1240px;
         margin: 0 auto;
-        padding: 28px 18px 56px;
+        padding: 56px 24px 80px;
       }
 
       /* ---------- Intro ---------- */
-      .intro { max-width: 820px; }
+      .intro { max-width: none; }
       .intro h1 {
-        font-family: "Oswald", sans-serif;
-        font-weight: 700;
+        font-family: "Archivo Black", "Inter", sans-serif;
+        font-weight: 400;
         text-transform: uppercase;
-        letter-spacing: 0.015em;
-        font-size: clamp(2rem, 5.4vw, 3.4rem);
-        line-height: 1.04;
-        margin: 0 0 14px;
+        letter-spacing: 0.005em;
+        font-size: clamp(2.6rem, 6.4vw, 4.6rem);
+        line-height: 0.98;
+        color: var(--ink);
+        margin: 0 auto 26px;
+        max-width: 860px;
+        text-align: center;
       }
       .frame {
-        font-size: clamp(1.02rem, 2.2vw, 1.22rem);
+        font-size: clamp(1.1rem, 2.3vw, 1.35rem);
+        line-height: 1.6;
         color: var(--ink);
-        margin: 0 0 10px;
-        max-width: 680px;
+        margin: 0 auto 14px;
+        max-width: 720px;
+        text-align: center;
       }
-      .frame strong { color: var(--accent); font-weight: 600; }
+      .frame strong { color: var(--accent); font-weight: 700; }
       .sub {
         color: var(--ink-2);
-        font-size: 0.97rem;
+        font-size: 1.02rem;
+        line-height: 1.7;
+        margin: 0 auto;
+        max-width: 720px;
+        text-align: center;
+      }
+
+      /* ---------- Tree (from the hand sketch) ---------- */
+      .tree-section {
+        margin: 48px 0 8px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        padding: 34px 32px 30px;
+      }
+      .tree-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: center;
+        text-align: center;
+        gap: 8px 22px;
+        margin-bottom: 6px;
+      }
+      .tree-head h2 {
+        font-family: "Archivo Black", "Inter", sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+        font-size: clamp(1.5rem, 3.6vw, 2.3rem);
+        line-height: 1;
+        color: var(--ink);
         margin: 0;
-        max-width: 680px;
+      }
+      .tree-head .tree-tag {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .tree-caption {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 0.95rem;
+        line-height: 1.65;
+        color: var(--ink-2);
+        max-width: 720px;
+      }
+      /* Tree proportions are quantized to phi: node width : height = phi,
+         leaf gap = node width / phi^3. The level pitch is the phi pitch
+         stretched by 1.25 so the levels breathe vertically. The diagram
+         is centered in the section with balanced margins on both sides. */
+      .tree-diagram {
+        position: relative;
+        width: 100%;
+        max-width: 1160px;
+        margin: 22px auto 6px;
+        aspect-ratio: 1286 / 756;
+      }
+      .tree-lines {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .tree-lines path {
+        fill: none;
+        stroke: var(--ink-2);
+        stroke-width: 2;
+        stroke-linecap: square;
+      }
+      .tree-lines-m { display: none; }
+      .tree-node {
+        position: absolute;
+        z-index: 2;
+        transform: translate(-50%, -50%);
+        width: 11.1%;
+        min-width: 92px;
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        border-top: 3px solid var(--ink);
+        padding: 12px 8px 11px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        text-align: center;
+      }
+      .tree-node.root { border-top-color: var(--accent); }
+      .tree-node .t-glyph { display: block; line-height: 0; }
+      .tree-node .t-glyph svg {
+        display: block;
+        width: 38px;
+        height: 38px;
+        fill: none;
+        stroke: var(--ink);
+        stroke-width: 2.4;
+        stroke-linecap: square;
+        stroke-linejoin: miter;
+      }
+      .tree-node .t-glyph .ga-fill { fill: var(--accent); stroke: none; }
+      .tree-node .t-glyph .ga-stroke { stroke: var(--accent); }
+      .tree-node .t-name {
+        font-family: "Archivo Black", "Inter", sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+        font-size: clamp(0.68rem, 1vw, 0.78rem);
+        line-height: 1.15;
+        color: var(--ink);
+      }
+      .tree-node .t-num {
+        font-family: "Inter", sans-serif;
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+      }
+      @media (max-width: 680px) {
+        .tree-section { padding: 22px 14px 16px; }
+      }
+      /* Stacked tree for narrow widths: single centered column in tree
+         (preorder) sequence, solid connectors only, no overlap. */
+      @media (max-width: 1100px) {
+        .tree-diagram { aspect-ratio: 360 / 2460; margin-top: 24px; max-width: 430px; }
+        .tree-lines-d { display: none; }
+        .tree-lines-m { display: block; }
+        .tree-node {
+          min-width: 0;
+          width: 62%;
+          left: 50% !important;
+          padding: 12px 10px 11px;
+          gap: 7px;
+        }
+        .tree-node:nth-of-type(1) { top: 4.3% !important; }
+        .tree-node:nth-of-type(2) { top: 11.9% !important; }
+        .tree-node:nth-of-type(3) { top: 19.5% !important; }
+        .tree-node:nth-of-type(4) { top: 27.2% !important; }
+        .tree-node:nth-of-type(5) { top: 34.8% !important; }
+        .tree-node:nth-of-type(6) { top: 42.4% !important; }
+        .tree-node:nth-of-type(7) { top: 50% !important; }
+        .tree-node:nth-of-type(8) { top: 57.6% !important; }
+        .tree-node:nth-of-type(9) { top: 65.2% !important; }
+        .tree-node:nth-of-type(10) { top: 72.9% !important; }
+        .tree-node:nth-of-type(11) { top: 80.5% !important; }
+        .tree-node:nth-of-type(12) { top: 88.1% !important; }
+        .tree-node:nth-of-type(13) { top: 95.7% !important; }
+        .tree-node .t-glyph svg { width: 30px; height: 30px; }
+        .tree-node .t-name { font-size: 0.72rem; }
+        .tree-node .t-num { font-size: 0.62rem; }
       }
 
       /* ---------- How to read ---------- */
       .howto {
-        margin: 26px 0 8px;
+        margin: 48px 0 8px;
         border-top: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
-        padding: 16px 0;
+        padding: 28px 0;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 18px;
+        gap: 28px;
       }
       .howto div { min-width: 0; }
       .howto h3 {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 0.12em;
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
         color: var(--accent);
-        margin: 0 0 5px;
+        margin: 0 0 8px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--line);
       }
-      .howto p { margin: 0; font-size: 0.88rem; color: var(--ink-2); }
+      .howto p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--ink-2); }
       .howto p b { color: var(--ink); font-weight: 600; }
 
       /* ---------- Controls ---------- */
@@ -126,86 +260,97 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 10px;
-        margin: 22px 0 0;
+        gap: 12px;
+        margin: 36px 0 0;
       }
       .controls .note {
-        font-family: "IBM Plex Mono", monospace;
+        font-family: "Inter", sans-serif;
         font-size: 0.78rem;
-        color: var(--ink-3);
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
         margin-right: auto;
       }
       button.ctl {
         appearance: none;
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 0.8rem;
-        font-weight: 500;
-        letter-spacing: 0.04em;
-        color: var(--ink);
-        background: var(--surface);
-        border: 1px solid var(--line-strong);
-        border-radius: 6px;
-        padding: 8px 14px;
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #111110;
+        background: #f5f3ef;
+        border: 1px solid #f5f3ef;
+        border-radius: 0;
+        padding: 12px 22px;
         cursor: pointer;
       }
-      button.ctl:hover { border-color: var(--accent); color: var(--accent); }
+      button.ctl:hover { background: var(--accent); border-color: var(--accent); color: #ffffff; }
       button.ctl:focus-visible, .pillar-head:focus-visible {
         outline: 2px solid var(--accent);
         outline-offset: 2px;
       }
 
       /* ---------- The structure ---------- */
-      .structure { margin-top: 14px; }
+      .structure { margin-top: 28px; }
 
       .beam {
         background: var(--beam-bg);
         color: var(--beam-ink);
-        border-radius: 4px 4px 0 0;
-        padding: 16px 20px 14px;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        padding: 30px 28px 26px;
         display: flex;
         flex-wrap: wrap;
         align-items: baseline;
-        gap: 6px 18px;
-        box-shadow: 0 10px 28px var(--shadow);
+        gap: 8px 22px;
         position: relative;
         z-index: 2;
       }
       .beam .beam-title {
-        font-family: "Oswald", sans-serif;
-        font-weight: 700;
+        font-family: "Archivo Black", "Inter", sans-serif;
+        font-weight: 400;
         text-transform: uppercase;
-        letter-spacing: 0.06em;
-        font-size: clamp(1.35rem, 3.6vw, 2.1rem);
+        letter-spacing: 0.01em;
+        font-size: clamp(1.7rem, 4.2vw, 2.7rem);
         line-height: 1;
       }
       .beam .beam-sub {
-        font-family: "IBM Plex Mono", monospace;
+        font-family: "Inter", sans-serif;
         font-size: 0.78rem;
-        letter-spacing: 0.05em;
+        font-weight: 600;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
-        opacity: 0.72;
+        color: var(--accent);
       }
       .beam-cracks {
         display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 5px;
         width: 100%;
         height: 10px;
-        margin-top: 6px;
+        color: var(--accent);
+        pointer-events: none;
       }
+      .beam-cracks path { stroke: var(--accent); opacity: 0.7; }
 
       .pillars {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 14px;
-        padding: 18px 0 0;
+        gap: 20px;
+        padding: 24px 0 0;
         align-items: start;
       }
 
       /* ---------- Pillar ---------- */
       .pillar {
-        background: linear-gradient(180deg, var(--pillar-top), var(--pillar-bottom));
+        background: var(--surface);
         border: 1px solid var(--line);
-        border-top: 3px solid var(--line-strong);
-        border-radius: 3px;
+        border-top: 3px solid var(--ink);
+        border-radius: 0;
         overflow: hidden;
         position: relative;
       }
@@ -226,75 +371,79 @@
       .pillar-visual {
         display: block;
         position: relative;
-        height: 118px;
+        height: 104px;
         border-bottom: 1px solid var(--line);
+        background: var(--surface-2);
         overflow: hidden;
       }
-      .pillar-visual svg.cracks {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-      }
-      .pillar-visual .glyphs-bg {
+      .pillar-visual .glyph-mark {
         position: absolute;
         inset: 0;
         display: flex;
-        flex-wrap: wrap;
-        align-content: flex-start;
-        gap: 2px 8px;
-        padding: 10px 12px;
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 0.82rem;
-        font-weight: 500;
-        color: var(--ink-3);
-        opacity: 0.55;
-        line-height: 1.5;
+        align-items: center;
+        justify-content: center;
         pointer-events: none;
       }
+      .glyph-mark svg {
+        display: block;
+        width: 62px;
+        height: 62px;
+        fill: none;
+        stroke: var(--ink);
+        stroke-width: 2.4;
+        stroke-linecap: square;
+        stroke-linejoin: miter;
+      }
+      .glyph-mark .ga-fill { fill: var(--accent); stroke: none; }
+      .glyph-mark .ga-stroke { stroke: var(--accent); }
       .pillar-num {
         position: absolute;
-        top: 8px;
-        right: 10px;
+        top: 10px;
+        right: 12px;
         z-index: 3;
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 0.72rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        color: var(--ink-2);
-        background: var(--pillar-top);
+        font-family: "Inter", sans-serif;
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        background: var(--surface);
         border: 1px solid var(--line);
-        border-radius: 4px;
-        padding: 2px 6px;
+        border-radius: 0;
+        padding: 2px 7px;
       }
       .erode {
+        display: block;
         position: absolute;
-        left: 0; right: 0; bottom: 0;
-        height: 26px;
-        background: linear-gradient(180deg, transparent, var(--bg));
-        opacity: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
         pointer-events: none;
+        background: repeating-linear-gradient(90deg, var(--accent) 0 14px, transparent 14px 23px, var(--accent) 23px 31px, transparent 31px 44px);
       }
-      .sev-3 .erode { opacity: 0.85; }
-      .sev-2 .erode { opacity: 0.45; }
+      .pillar.sev-1 .erode { height: 3px; opacity: 0.3; }
+      .pillar.sev-2 .erode { height: 6px; opacity: 0.55; }
+      .pillar.sev-3 .erode { height: 10px; opacity: 0.9; }
 
-      .pillar-meta { padding: 13px 14px 14px; }
+      .pillar-meta { padding: 18px 18px 20px; }
       .pillar-name {
-        font-family: "Oswald", sans-serif;
-        font-weight: 600;
+        font-family: "Archivo Black", "Inter", sans-serif;
+        font-weight: 400;
         text-transform: uppercase;
-        letter-spacing: 0.035em;
-        font-size: 1.12rem;
+        letter-spacing: 0.01em;
+        font-size: 1.05rem;
         line-height: 1.15;
-        margin: 0 0 8px;
+        color: var(--ink);
+        margin: 0 0 10px;
         display: flex;
         align-items: baseline;
         justify-content: space-between;
         gap: 8px;
       }
       .chev {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 0.85rem;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 700;
         color: var(--accent);
         transition: transform 0.2s ease;
         flex: none;
@@ -302,24 +451,24 @@
       .pillar.open .chev { transform: rotate(180deg); }
       .state-line {
         margin: 0;
-        font-size: 0.86rem;
+        font-size: 0.92rem;
         color: var(--ink-2);
-        line-height: 1.45;
+        line-height: 1.6;
       }
       .state-line b { color: var(--ink); font-weight: 600; }
       .thin-flag {
         display: inline-block;
-        margin-top: 9px;
-        font-family: "IBM Plex Mono", monospace;
+        margin-top: 11px;
+        font-family: "Inter", sans-serif;
         font-size: 0.68rem;
-        font-weight: 600;
-        letter-spacing: 0.09em;
+        font-weight: 700;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: var(--accent-2);
+        color: var(--accent);
         background: var(--accent-soft);
         border: 1px solid var(--accent);
-        border-radius: 4px;
-        padding: 3px 7px;
+        border-radius: 0;
+        padding: 4px 8px;
       }
 
       /* ---------- Pillar detail ---------- */
@@ -327,63 +476,69 @@
         display: none;
         border-top: 1px solid var(--line);
         background: var(--surface);
-        padding: 15px 14px 16px;
+        padding: 20px 18px 22px;
       }
       .pillar.open .pillar-detail { display: block; }
-      .pillar-detail section + section { margin-top: 14px; }
+      .pillar-detail section + section { margin-top: 20px; }
       .pillar-detail h4 {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 0.68rem;
-        font-weight: 600;
-        letter-spacing: 0.12em;
+        font-family: "Inter", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
         color: var(--accent);
-        margin: 0 0 5px;
+        margin: 0 0 7px;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--line);
       }
-      .pillar-detail p { margin: 0; font-size: 0.9rem; color: var(--ink-2); }
+      .pillar-detail p { margin: 0; font-size: 0.95rem; line-height: 1.7; color: var(--ink-2); }
       .pillar-detail p b, .pillar-detail li b { color: var(--ink); font-weight: 600; }
       .glyph-list {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 0.82rem !important;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem !important;
+        font-weight: 500;
         color: var(--ink) !important;
-        line-height: 1.6;
+        line-height: 1.7;
       }
-      .pillar-detail ul { margin: 0; padding-left: 17px; }
-      .pillar-detail li { font-size: 0.9rem; color: var(--ink-2); margin: 2px 0; }
+      .pillar-detail ul { margin: 0; padding-left: 18px; }
+      .pillar-detail li { font-size: 0.95rem; line-height: 1.7; color: var(--ink-2); margin: 4px 0; }
 
       /* ---------- Foundation / closing ---------- */
       .foundation {
-        margin-top: 20px;
-        border: 1px solid var(--line-strong);
-        background: var(--bg-2);
-        border-radius: 4px;
-        padding: 18px 20px;
+        margin-top: 48px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        border-radius: 0;
+        padding: 30px 28px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 8px 28px;
+        gap: 12px 36px;
       }
       .foundation h2 {
         grid-column: 1 / -1;
-        font-family: "Oswald", sans-serif;
-        font-weight: 600;
+        font-family: "Archivo Black", "Inter", sans-serif;
+        font-weight: 400;
         text-transform: uppercase;
-        letter-spacing: 0.04em;
-        font-size: 1.05rem;
-        margin: 0 0 4px;
+        letter-spacing: 0.01em;
+        font-size: 1.3rem;
+        line-height: 1.1;
+        color: var(--ink);
+        margin: 0 0 8px;
       }
-      .foundation p { margin: 0; font-size: 0.92rem; color: var(--ink-2); }
+      .foundation p { margin: 0; font-size: 0.98rem; line-height: 1.7; color: var(--ink-2); }
       .foundation p b { color: var(--ink); font-weight: 600; }
 
       footer {
-        margin-top: 26px;
-        padding-top: 14px;
+        margin-top: 40px;
+        padding-top: 18px;
         border-top: 1px solid var(--line);
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 0.76rem;
+        font-family: "Inter", sans-serif;
+        font-size: 0.8rem;
+        line-height: 1.6;
         color: var(--ink-3);
         display: flex;
         flex-wrap: wrap;
-        gap: 4px 22px;
+        gap: 6px 26px;
       }
 
       @media (max-width: 980px) {
@@ -391,15 +546,17 @@
         .howto { grid-template-columns: repeat(2, 1fr); }
       }
       @media (max-width: 680px) {
-        .wrap { padding: 20px 13px 44px; }
-        .pillars { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        .pillar-visual { height: 96px; }
+        .wrap { padding: 36px 16px 56px; }
+        .pillars { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .pillar-visual { height: 88px; }
+        .glyph-mark svg { width: 52px; height: 52px; }
         .foundation { grid-template-columns: 1fr; }
+        .beam { padding: 22px 18px 20px; }
       }
       @media (max-width: 400px) {
         .pillars { grid-template-columns: 1fr 1fr; }
-        .pillar-name { font-size: 0.92rem; letter-spacing: 0.02em; }
-        .pillar-meta { padding: 11px 11px 12px; }
+        .pillar-name { font-size: 0.82rem; }
+        .pillar-meta { padding: 14px 13px 16px; }
       }
       @media (prefers-reduced-motion: reduce) {
         .chev { transition: none; }
@@ -410,10 +567,150 @@
     <div class="wrap">
 
       <header class="intro">
-        <h1>Systems Collapse Chart</h1>
-        <p class="frame">These are <strong>the systems that manipulate symbols</strong> — and they are the systems slated for automation.</p>
-        <p class="sub">Twelve systems, in the order they were named. Each one runs on literal glyphs — letters, numbers, marks — and each one deploys those glyphs as meaning, used as a weapon. Open a pillar to see both layers, the mechanism doing the work, and where the system stands.</p>
+        <h1>Systems Collapse</h1>
+        <p class="frame">These are <strong>the systems that manipulate symbols</strong> and they are the systems slated for automation.</p>
+        <p class="sub">Thirteen systems, in the order they were named. Each one runs on literal glyphs letters, numbers, marks and each one deploys those glyphs as meaning, used as a weapon. Open a pillar to see both layers, the mechanism doing the work, and where the system stands.</p>
       </header>
+
+      <section class="tree-section" aria-label="The Staged Show tree">
+        <div class="tree-head">
+          <h2>The Staged Show</h2>
+          <span class="tree-tag">Tree Psych at the root</span>
+        </div>
+        <p class="tree-caption">Psych branches down to Health, Media / Info, Community, and Energy. Health runs down to Food. Media / Info runs down to Education, Law, Entertainment, and Financial, and Law runs down to Governance. Community runs down to Housing and Labor.</p>
+        <div class="tree-diagram" role="img" aria-label="Tree diagram: Psych at the root, branching down to Health, Media Info, Community, and Energy. Health continues down to Food. Media Info continues down to Education, Law, Entertainment, and Financial, and Law continues down to Governance. Community continues down to Housing and Labor.">
+          <svg class="tree-lines tree-lines-d" viewBox="0 0 1286 756" preserveAspectRatio="none" aria-hidden="true">
+            <!-- Psych down to its four children: Health, Media / Info, Community, Energy -->
+            <path d="M643 150 V201"/>
+            <path d="M71 201 H1215"/>
+            <path d="M71 201 V252"/>
+            <path d="M511 201 V252"/>
+            <path d="M1039 201 V252"/>
+            <path d="M1215 201 V252"/>
+            <!-- Health down to Food -->
+            <path d="M71 328 V430"/>
+            <!-- Media / Info down to Education, Law, Entertainment, Financial -->
+            <path d="M511 328 V379"/>
+            <path d="M247 379 H775"/>
+            <path d="M247 379 V430"/>
+            <path d="M423 379 V430"/>
+            <path d="M599 379 V430"/>
+            <path d="M775 379 V430"/>
+            <!-- Law down to Governance -->
+            <path d="M423 506 V608"/>
+            <!-- Community down to Housing and Labor -->
+            <path d="M1039 328 V379"/>
+            <path d="M951 379 H1127"/>
+            <path d="M951 379 V430"/>
+            <path d="M1127 379 V430"/>
+          </svg>
+
+          <svg class="tree-lines tree-lines-m" viewBox="0 0 360 2460" preserveAspectRatio="none" aria-hidden="true">
+            <!-- rail: Psych out to Media / Info, Community, Energy -->
+            <path d="M30 105 V2355"/>
+            <path d="M30 105 H68"/>
+            <path d="M30 668 H68"/>
+            <path d="M30 1793 H68"/>
+            <path d="M30 2355 H68"/>
+            <!-- Psych down to Health -->
+            <path d="M180 145 V253"/>
+            <!-- Health down to Food -->
+            <path d="M180 333 V440"/>
+            <!-- Media / Info down to Education -->
+            <path d="M180 708 V815"/>
+            <!-- rail: Media / Info out to Law, Entertainment, Financial -->
+            <path d="M52 668 V1605"/>
+            <path d="M52 1043 H68"/>
+            <path d="M52 1418 H68"/>
+            <path d="M52 1605 H68"/>
+            <!-- Law down to Governance -->
+            <path d="M180 1083 V1190"/>
+            <!-- Community down to Housing -->
+            <path d="M180 1833 V1940"/>
+            <!-- rail: Community out to Labor -->
+            <path d="M52 1793 V2168"/>
+            <path d="M52 2168 H68"/>
+          </svg>
+
+          <div class="tree-node root" style="left:50%; top:14.8%">
+            <span class="t-glyph"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="19" cy="17" r="8"/><path d="M11 41v-3a8 8 0 0 1 16 0v3"/><path class="ga-fill" d="M34 10l1.8 4.2L40 16l-4.2 1.8L34 22l-1.8-4.2L28 16l4.2-1.8z"/></svg></span>
+            <span class="t-name">Psych</span>
+            <span class="t-num">01 / 13</span>
+          </div>
+
+          <div class="tree-node" style="left:5.5%; top:38.4%">
+            <span class="t-glyph"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5l15 5v13c0 10-6 16-15 20C15 39 9 33 9 23V10z"/><path class="ga-stroke" d="M24 15v14M17 22h14"/></svg></span>
+            <span class="t-name">Health</span>
+            <span class="t-num">04 / 13</span>
+          </div>
+
+          <div class="tree-node" style="left:5.5%; top:61.9%">
+            <span class="t-glyph"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 34a16 16 0 0 1 32 0"/><path d="M24 18v-3"/><circle class="ga-fill" cx="24" cy="12" r="2.2"/><path d="M5 34h38"/><path class="ga-stroke" d="M12 40h24"/></svg></span>
+            <span class="t-name">Food</span>
+            <span class="t-num">09 / 13</span>
+          </div>
+
+          <div class="tree-node" style="left:39.7%; top:38.4%">
+            <span class="t-glyph"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="10" width="36" height="27"/><path d="M24 37v5M17 42h14"/><path class="ga-fill" d="M20 17l11 6.5L20 30z"/></svg></span>
+            <span class="t-name">Media / Info</span>
+            <span class="t-num">06 / 13</span>
+          </div>
+
+          <div class="tree-node" style="left:19.2%; top:61.9%">
+            <span class="t-glyph"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 9l21 10-21 10L3 19z"/><path d="M13 23.5V30c0 3.5 22 3.5 22 0v-6.5"/><path d="M45 19v9"/><circle class="ga-fill" cx="45" cy="31" r="2.2"/></svg></span>
+            <span class="t-name">Education</span>
+            <span class="t-num">05 / 13</span>
+          </div>
+
+          <div class="tree-node" style="left:32.9%; top:61.9%">
+            <span class="t-glyph"><svg viewBox="0 0 48 48" aria-hidden="true"><circle class="ga-fill" cx="24" cy="8" r="2.2"/><path d="M8 12h32M24 12v26M16 42h16M12 12l-5 10M12 12l5 10M4 22a8 4 0 0 0 16 0M36 12l-5 10M36 12l5 10M28 22a8 4 0 0 0 16 0"/></svg></span>
+            <span class="t-name">Law</span>
+            <span class="t-num">03 / 13</span>
+          </div>
+
+          <div class="tree-node" style="left:32.9%; top:85.4%">
+            <span class="t-glyph"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 17L24 7l18 10z"/><circle class="ga-fill" cx="24" cy="13.5" r="1.8"/><path d="M6 21h36M12 25v11M24 25v11M36 25v11M6 40h36"/><path class="ga-stroke" d="M10 44h28"/></svg></span>
+            <span class="t-name">Governance</span>
+            <span class="t-num">11 / 13</span>
+          </div>
+
+          <div class="tree-node" style="left:46.6%; top:61.9%">
+            <span class="t-glyph"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 6c-5.8 0-10 5-10 11.5C7 25 12 31 17 31s10-6 10-13.5C27 11 22.8 6 17 6z"/><path d="M13.4 15.2h.01M20.6 15.2h.01" stroke-width="3.6"/><path d="M13 21.5c1.2 2 6.8 2 8 0"/><path class="ga-stroke" d="M31 17c5.8 0 10 5 10 11.5C41 36 36 42 31 42s-10-6-10-13.5C21 22 25.2 17 31 17z"/><path class="ga-stroke" d="M27.4 26.2h.01M34.6 26.2h.01" stroke-width="3.6"/><path class="ga-stroke" d="M27 35.5c1.2-2 6.8-2 8 0"/></svg></span>
+            <span class="t-name">Entertainment</span>
+            <span class="t-num">13 / 13</span>
+          </div>
+
+          <div class="tree-node" style="left:60.3%; top:61.9%">
+            <span class="t-glyph"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 42h36"/><rect x="11" y="26" width="6" height="16"/><rect x="21" y="18" width="6" height="24"/><rect class="ga-stroke" x="31" y="10" width="6" height="32"/></svg></span>
+            <span class="t-name">Financial</span>
+            <span class="t-num">02 / 13</span>
+          </div>
+
+          <div class="tree-node" style="left:80.8%; top:38.4%">
+            <span class="t-glyph"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 14.5v6M21.7 26.3l-6.5 7.5M26.3 26.3l6.5 7.5"/><circle cx="24" cy="10" r="4.5"/><circle class="ga-fill" cx="24" cy="24" r="3.2"/><circle cx="12" cy="37" r="4.5"/><circle cx="36" cy="37" r="4.5"/></svg></span>
+            <span class="t-name">Community</span>
+            <span class="t-num">10 / 13</span>
+          </div>
+
+          <div class="tree-node" style="left:73.9%; top:61.9%">
+            <span class="t-glyph"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7l18 16v17H27v-9h-6v9H6V23z"/><rect class="ga-stroke" x="30.5" y="26" width="5" height="5"/></svg></span>
+            <span class="t-name">Housing</span>
+            <span class="t-num">07 / 13</span>
+          </div>
+
+          <div class="tree-node" style="left:87.6%; top:61.9%">
+            <span class="t-glyph"><svg viewBox="0 0 48 48" aria-hidden="true"><g><rect x="21.8" y="4.5" width="4.4" height="9"/><rect x="21.8" y="34.5" width="4.4" height="9"/><rect x="4.5" y="21.8" width="9" height="4.4"/><rect x="34.5" y="21.8" width="9" height="4.4"/></g><g transform="rotate(45 24 24)"><rect x="21.8" y="4.5" width="4.4" height="9"/><rect x="21.8" y="34.5" width="4.4" height="9"/><rect x="4.5" y="21.8" width="9" height="4.4"/><rect x="34.5" y="21.8" width="9" height="4.4"/></g><circle cx="24" cy="24" r="10.5"/><circle class="ga-fill" cx="24" cy="24" r="3"/></svg></span>
+            <span class="t-name">Labor</span>
+            <span class="t-num">08 / 13</span>
+          </div>
+
+          <div class="tree-node" style="left:94.5%; top:38.4%">
+            <span class="t-glyph"><svg viewBox="0 0 48 48" aria-hidden="true"><path class="ga-fill" d="M28 3L12 27h9l-3 18 20-26h-10z"/></svg></span>
+            <span class="t-name">Energy</span>
+            <span class="t-num">12 / 13</span>
+          </div>
+        </div>
+      </section>
 
       <div class="howto" aria-label="How to read this chart">
         <div>
@@ -426,7 +723,7 @@
         </div>
         <div>
           <h3>Mechanism</h3>
-          <p><b>The named move.</b> What the system actually does, in plain terms — no authors required.</p>
+          <p><b>The named move.</b> What the system actually does, in plain terms no authors required.</p>
         </div>
         <div>
           <h3>State</h3>
@@ -435,15 +732,15 @@
       </div>
 
       <div class="controls">
-        <span class="note">12 pillars · 1 beam · tap a pillar to open it</span>
+        <span class="note">13 pillars · 1 beam · tap a pillar to open it</span>
         <button class="ctl" id="expandAll" type="button">Open all</button>
         <button class="ctl" id="collapseAll" type="button">Close all</button>
       </div>
 
       <div class="structure">
-        <div class="beam" role="img" aria-label="A beam labeled The Staged Show, resting on twelve pillars">
+        <div class="beam" role="img" aria-label="A beam labeled The Staged Show, resting on thirteen pillars">
           <span class="beam-title">The Staged Show</span>
-          <span class="beam-sub">Resting on twelve symbol systems</span>
+          <span class="beam-sub">Resting on thirteen symbol systems</span>
           <svg class="beam-cracks" viewBox="0 0 1200 10" preserveAspectRatio="none" aria-hidden="true">
             <path d="M60,1 L150,6 L230,3 L340,8 M520,2 L610,7 L700,4 M880,1 L960,6 L1060,3 L1140,7" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.4"/>
           </svg>
@@ -453,14 +750,14 @@
       </div>
 
       <section class="foundation" aria-label="What holds and what does not">
-        <h2>The pattern under all twelve</h2>
-        <p><b>The glyph outlives the thing.</b> A grade, a score, a code, a count — the mark keeps circulating and deciding long after the underlying function has hollowed out. The system no longer needs the thing it was built to track. It only needs the symbol.</p>
-        <p><b>That is why these twelve are the automation targets.</b> A system that runs on symbols can be run by a machine that manipulates symbols. What gets automated is not the function — the function is already gone in most of them. What gets automated is the mark-making itself.</p>
+        <h2>The pattern under all thirteen</h2>
+        <p><b>The glyph outlives the thing.</b> A grade, a score, a code, a count the mark keeps circulating and deciding long after the underlying function has hollowed out. The system no longer needs the thing it was built to track. It only needs the symbol.</p>
+        <p><b>That is why these thirteen are the automation targets.</b> A system that runs on symbols can be run by a machine that manipulates symbols. What gets automated is not the function the function is already gone in most of them. What gets automated is the mark-making itself.</p>
       </section>
 
       <footer>
-        <span>Order: Psychological · Financial · Law · Health — then Education · Media · Housing · Labor · Food · Community · Governance · Energy</span>
-        <span>Energy here means emotional energy — feeling and attention drawn out of people, not only power in the grid.</span>
+        <span>Order: Psychological · Financial · Law · Health then Education · Media · Housing · Labor · Food · Community · Governance · Energy · Entertainment</span>
+        <span>Energy here means emotional energy feeling and attention drawn out of people, not only power in the grid.</span>
       </footer>
     </div>
 
@@ -468,112 +765,109 @@
       var SYSTEMS = [
         {
           n: "01", name: "Psychological", sev: 3,
-          glyphBg: ["DSM-5", "F32.1", "F41.9", "Dx", "PHQ-9"],
+          mark: '<circle cx="19" cy="17" r="8"/><path d="M11 41v-3a8 8 0 0 1 16 0v3"/><path class="ga-fill" d="M34 10l1.8 4.2L40 16l-4.2 1.8L34 22l-1.8-4.2L28 16l4.2-1.8z"/>',
           state: "<b>Hollowing.</b> The label ejects what the room cannot hold, and the loop bills on.",
           glyphs: "DSM codes and F-codes, diagnostic labels used as codes, intake forms, symptom checklists, session notes.",
-          weapon: "The diagnosis lands as a verdict on the person, not a description of a state. When material exceeds what the practitioner can process, the label converts the system's limit into the person's defect — an ejection with paperwork.",
-          mechanisms: ["<b>The therapy loop with no done-criterion</b> — no milestone, no discharge test, no finished state; managed process, billed indefinitely.", "<b>Labels that eject</b> — what the system cannot hold gets named as pathology and referred out."],
+          weapon: "The diagnosis lands as a verdict on the person, not a description of a state. When material exceeds what the practitioner can process, the label converts the system's limit into the person's defect an ejection with paperwork.",
+          mechanisms: ["<b>The therapy loop with no done-criterion</b> no milestone, no discharge test, no finished state; managed process, billed indefinitely.", "<b>Labels that eject</b> what the system cannot hold gets named as pathology and referred out."],
         },
         {
           n: "02", name: "Financial", sev: 3,
-          glyphBg: ["$", "742", "AAPL", "0.00", "****4821"],
+          mark: '<path d="M6 42h36"/><rect x="11" y="26" width="6" height="16"/><rect x="21" y="18" width="6" height="24"/><rect class="ga-stroke" x="31" y="10" width="6" height="32"/>',
           state: "<b>Symbol-thin.</b> Nothing behind the row but another row.",
           glyphs: "Digits and balances, credit scores, stock tickers, account numbers, dollar signs, interest rates.",
-          weapon: "The score is read as a verdict on the person — trustworthy or not, rentable or not, employable or not. The balance is read as worth. A number compiled from records decides access to housing, work, and credit before any human looks.",
-          mechanisms: ["<b>Value as database rows</b> — money exists as records in a ledger; the records are the asset.", "<b>Reading-system dependency</b> — balances and scores hold only while the system that reads them keeps running. When the reading stops, the record is just marks."],
+          weapon: "The score is read as a verdict on the person trustworthy or not, rentable or not, employable or not. The balance is read as worth. A number compiled from records decides access to housing, work, and credit before any human looks.",
+          mechanisms: ["<b>Value as database rows</b> money exists as records in a ledger; the records are the asset.", "<b>Reading-system dependency</b> balances and scores hold only while the system that reads them keeps running. When the reading stops, the record is just marks."],
         },
         {
           n: "03", name: "Law", sev: 2,
-          glyphBg: ["§", "No. 24-1187", "✕______", "FILED", "⚖"],
+          mark: '<circle class="ga-fill" cx="24" cy="8" r="2.2"/><path d="M8 12h32M24 12v26M16 42h16M12 12l-5 10M12 12l5 10M4 22a8 4 0 0 0 16 0M36 12l-5 10M36 12l5 10M28 22a8 4 0 0 0 16 0"/>',
           state: "<b>Ledger-decided.</b> Outcomes go to whoever keeps the better record.",
           glyphs: "Seals and stamps, signatures, docket numbers, section marks (§), filings, case numbers, notarized marks.",
           weapon: "The filing is treated as the event. What is on the record is what happened; what never got filed did not. A signature binds a person to terms the mark makes real, and the seal turns paper into authority.",
-          mechanisms: ["<b>Process as toll gate</b> — every step of the process charges in money, time, or expertise; access to the outcome is priced at the gate.", "<b>The better ledger wins</b> — outcomes decided by who documented, timestamped, and kept the cleaner record. The counter-move is a counter-ledger."],
+          mechanisms: ["<b>Process as toll gate</b> every step of the process charges in money, time, or expertise; access to the outcome is priced at the gate.", "<b>The better ledger wins</b> outcomes decided by who documented, timestamped, and kept the cleaner record. The counter-move is a counter-ledger."],
         },
         {
           n: "04", name: "Health", sev: 3,
-          glyphBg: ["Rx", "I10", "ICD-10", "BP 120/80", "mg"],
+          mark: '<path d="M24 5l15 5v13c0 10-6 16-15 20C15 39 9 33 9 23V10z"/><path class="ga-stroke" d="M24 15v14M17 22h14"/>',
           state: "<b>Managed, not resolved.</b> Symptoms maintained on schedule; the source owned by nobody.",
           glyphs: "Rx, ICD-10 codes, chart abbreviations, vital-sign numbers, dosage units, billing codes.",
-          weapon: "The diagnosis functions as a billing key first and an explanation second — the code is what gets the visit paid. The chart can override the body's own report: what is written in the record is treated as the patient.",
-          mechanisms: ["<b>Deferred maintenance of the body</b> — the symptom is managed, the cause is left in place, and the management is what recurs.", "<b>Managed symptoms, billable indefinitely</b> — a resolved patient exits the system; a managed one stays on the books."],
+          weapon: "The diagnosis functions as a billing key first and an explanation second the code is what gets the visit paid. The chart can override the body's own report: what is written in the record is treated as the patient.",
+          mechanisms: ["<b>Deferred maintenance of the body</b> the symptom is managed, the cause is left in place, and the management is what recurs.", "<b>Managed symptoms, billable indefinitely</b> a resolved patient exits the system; a managed one stays on the books."],
         },
         {
           n: "05", name: "Education", sev: 3,
-          glyphBg: ["A", "B+", "C−", "GPA 3.2", "F"],
-          state: "<b>Stalling by design.</b> Produces the population that cannot detect the other eleven.",
-          glyphs: "Letter grades A–F — literally letters — GPA digits, transcripts, diplomas, credentials, standardized test scores.",
+          mark: '<path d="M24 9l21 10-21 10L3 19z"/><path d="M13 23.5V30c0 3.5 22 3.5 22 0v-6.5"/><path d="M45 19v9"/><circle class="ga-fill" cx="45" cy="31" r="2.2"/>',
+          state: "<b>Stalling by design.</b> Produces the population that cannot detect the other twelve.",
+          glyphs: "Letter grades A–F literally letters GPA digits, transcripts, diplomas, credentials, standardized test scores.",
           weapon: "The grade is delivered as a verdict on the child, not a measurement of one performance on one day. The credential becomes permission to be heard: the same sentence counts or doesn't depending on the letters after the name.",
-          mechanisms: ["<b>The “good enough to pass” trap</b> — the threshold is set at the minimum that keeps the pipeline moving, and the minimum becomes the target.", "<b>Stalling education</b> — years of attendance structured so the capacity to detect manipulation never gets built."],
+          mechanisms: ["<b>The “good enough to pass” trap</b> the threshold is set at the minimum that keeps the pipeline moving, and the minimum becomes the target.", "<b>Stalling education</b> years of attendance structured so the capacity to detect manipulation never gets built."],
         },
         {
           n: "06", name: "Media / Information", sev: 3,
-          glyphBg: ["#", "BREAKING", "1.2K", "▶", "@"],
+          mark: '<rect x="6" y="10" width="36" height="27"/><path d="M24 37v5M17 42h14"/><path class="ga-fill" d="M20 17l11 6.5L20 30z"/>',
           state: "<b>Collapsing while narrating.</b> It reports the other collapses through a feed that is itself the mechanism.",
           glyphs: "Headlines, characters and captions, hashtags, like and share counts, trending tags, the checkmarks and marks of the feed.",
-          weapon: "The headline is consumed as the event. A narrative repeated at feed speed becomes the thing people react to, plan around, and confess into — while the confession itself is harvested as targeting data.",
-          mechanisms: ["<b>The authorless operation</b> — no one designs it; the engagement gradient does. Confession is the most engaging material, confessions are psychological data, the data trains the targeting, the targeting steers behavior.", "<b>The directed flood</b> — volume as a weapon: enough material at once that no signal can be checked before the next wave lands."],
+          weapon: "The headline is consumed as the event. A narrative repeated at feed speed becomes the thing people react to, plan around, and confess into while the confession itself is harvested as targeting data.",
+          mechanisms: ["<b>The authorless operation</b> no one designs it; the engagement gradient does. Confession is the most engaging material, confessions are psychological data, the data trains the targeting, the targeting steers behavior.", "<b>The directed flood</b> volume as a weapon: enough material at once that no signal can be checked before the next wave lands."],
         },
         {
           n: "07", name: "Housing", sev: 2,
-          glyphBg: ["Unit 4B", "§8.2", "$2,150", "Lease", "ZIP"],
+          mark: '<path d="M24 7l18 16v17H27v-9h-6v9H6V23z"/><rect class="ga-stroke" x="30.5" y="26" width="5" height="5"/>',
           state: "<b>Shelter as an asset.</b> The dwelling is the yield; maintenance is the cost to defer.",
           glyphs: "Street addresses, unit numbers, lease clauses and section numbers, rent figures, application scores, lockbox codes.",
-          weapon: "The clause decides what a home is allowed to be — who may live there, what may happen inside it, on what notice it ends. The unit number replaces the dwelling: interchangeable on paper, so it is maintained like paper.",
-          mechanisms: ["<b>Deferred maintenance as profit</b> — every repair postponed is margin this quarter; the decay is carried by the tenant, the yield by the owner."],
+          weapon: "The clause decides what a home is allowed to be who may live there, what may happen inside it, on what notice it ends. The unit number replaces the dwelling: interchangeable on paper, so it is maintained like paper.",
+          mechanisms: ["<b>Deferred maintenance as profit</b> every repair postponed is margin this quarter; the decay is carried by the tenant, the yield by the owner."],
         },
         {
           n: "08", name: "Labor", sev: 2,
-          glyphBg: ["ID 00417", "Mgr.", "KPI", "Sr. Assoc.", "Badge"],
+          mark: '<g><rect x="21.8" y="4.5" width="4.4" height="9"/><rect x="21.8" y="34.5" width="4.4" height="9"/><rect x="4.5" y="21.8" width="9" height="4.4"/><rect x="34.5" y="21.8" width="9" height="4.4"/></g><g transform="rotate(45 24 24)"><rect x="21.8" y="4.5" width="4.4" height="9"/><rect x="21.8" y="34.5" width="4.4" height="9"/><rect x="4.5" y="21.8" width="9" height="4.4"/><rect x="34.5" y="21.8" width="9" height="4.4"/></g><circle cx="24" cy="24" r="10.5"/><circle class="ga-fill" cx="24" cy="24" r="3"/>',
           state: "<b>Appearance kept, function gone.</b> The role survives the work it was named for.",
           glyphs: "Job titles, badges, employee ID numbers, org-chart boxes, KPI figures, signatures on timesheets.",
-          weapon: "The title is handed out as status and read as a verdict on the person holding it — senior, junior, essential, redundant. The badge decides where a body is allowed to be, independent of what the body does there.",
-          mechanisms: ["<b>Face-saving jobs</b> — roles that exist to preserve appearances: the position protects the organization's story about itself while the actual function hollows out underneath it."],
+          weapon: "The title is handed out as status and read as a verdict on the person holding it senior, junior, essential, redundant. The badge decides where a body is allowed to be, independent of what the body does there.",
+          mechanisms: ["<b>Face-saving jobs</b> roles that exist to preserve appearances: the position protects the organization's story about itself while the actual function hollows out underneath it."],
         },
         {
           n: "09", name: "Food", sev: 2,
-          glyphBg: ["NATURAL", "0g", "★", "NET WT", "EXP 08/27"],
+          mark: '<path d="M8 34a16 16 0 0 1 32 0"/><path d="M24 18v-3"/><circle class="ga-fill" cx="24" cy="12" r="2.2"/><path d="M5 34h38"/><path class="ga-stroke" d="M12 40h24"/>',
           state: "<b>Label trusted, input unexamined.</b> Quality checked only by individuals running private experiments.",
           glyphs: "Label stamps and seals, nutrition panels, claims printed on packages, barcodes, expiration dates, certification marks.",
-          weapon: "The claim on the package is consumed as the property of the food. “Natural,” “wholesome,” a green stamp — the words do the trusting for the buyer, so the engineered input behind them never gets a question.",
-          mechanisms: ["<b>Engineered inputs behind marketing language</b> — the product is formulated for shelf life, cost, and repeat purchase; the language on the front is formulated separately, for the same reasons.", "<b>Private auditing only</b> — the system's quality is verified, where it is verified at all, one person at a time, running their own experiment."],
+          weapon: "The claim on the package is consumed as the property of the food. “Natural,” “wholesome,” a green stamp the words do the trusting for the buyer, so the engineered input behind them never gets a question.",
+          mechanisms: ["<b>Engineered inputs behind marketing language</b> the product is formulated for shelf life, cost, and repeat purchase; the language on the front is formulated separately, for the same reasons.", "<b>Private auditing only</b> the system's quality is verified, where it is verified at all, one person at a time, running their own experiment."],
         },
         {
           n: "10", name: "Community", sev: 3,
-          glyphBg: ["♥ 842", "12.4K", "✓", "🔥 36", "Friends 1,204"],
+          mark: '<path d="M24 14.5v6M21.7 26.3l-6.5 7.5M26.3 26.3l6.5 7.5"/><circle cx="24" cy="10" r="4.5"/><circle class="ga-fill" cx="24" cy="24" r="3.2"/><circle cx="12" cy="37" r="4.5"/><circle cx="36" cy="37" r="4.5"/>',
           state: "<b>Substituted.</b> Local bonds replaced by platform metrics; the count stands in for the bond.",
           glyphs: "Follower counts, friend counts, hearts, verification checkmarks, streak flames, notification badges.",
-          weapon: "The count is read as the relationship. A checkmark confers legitimacy, a follower total confers worth, a heart stands in for loyalty — and loyalty itself gets enforced on a leaderboard, where standing is visible and ranked.",
-          mechanisms: ["<b>Parasocial substitution</b> — one-way familiarity replaces mutual bonds; the feeling of being known is delivered without anyone knowing you.", "<b>Loyalty on a leaderboard</b> — devotion measured, displayed, and compared as a number, so the bond becomes a ranking."],
+          weapon: "The count is read as the relationship. A checkmark confers legitimacy, a follower total confers worth, a heart stands in for loyalty and loyalty itself gets enforced on a leaderboard, where standing is visible and ranked.",
+          mechanisms: ["<b>Parasocial substitution</b> one-way familiarity replaces mutual bonds; the feeling of being known is delivered without anyone knowing you.", "<b>Loyalty on a leaderboard</b> devotion measured, displayed, and compared as a number, so the bond becomes a ranking."],
         },
         {
           n: "11", name: "Governance", sev: 2,
-          glyphBg: ["☑", "SEAL", "Form 1040", "I VOTED", "★ ★ ★"],
+          mark: '<path d="M6 17L24 7l18 10z"/><circle class="ga-fill" cx="24" cy="13.5" r="1.8"/><path d="M6 21h36M12 25v11M24 25v11M36 25v11M6 40h36"/><path class="ga-stroke" d="M10 44h28"/>',
           state: "<b>Legitimacy performed.</b> Consent collected as theater while the information space floods.",
           glyphs: "Flags, official seals, ballots, checkboxes, form numbers, voter and citizen ID numbers, signatures on petitions.",
-          weapon: "The checkbox is recorded as consent — a mark in a box stands in for agreement to terms nobody read. The seal and the flag confer legitimacy on whatever they are stamped onto; the ballot mark counts only if the counting system reads it.",
-          mechanisms: ["<b>Consent-theater</b> — agreement performed through interface design: the box, the click, the signature line. The performance is filed as the real thing.", "<b>Directed flooding of its own information space</b> — the system depends on a legible public record while volume makes that record uncheckable."],
+          weapon: "The checkbox is recorded as consent a mark in a box stands in for agreement to terms nobody read. The seal and the flag confer legitimacy on whatever they are stamped onto; the ballot mark counts only if the counting system reads it.",
+          mechanisms: ["<b>Consent-theater</b> agreement performed through interface design: the box, the click, the signature line. The performance is filed as the real thing.", "<b>Directed flooding of its own information space</b> the system depends on a legible public record while volume makes that record uncheckable."],
         },
         {
           n: "12", name: "Energy", sev: 3,
-          glyphBg: ["2%", "drained", "burnout", "12K views", "kWh"],
+          mark: '<path class="ga-fill" d="M28 3L12 27h9l-3 18 20-26h-10z"/>',
           state: "<b>Emotional energy, extracted.</b> Feeling and attention are pulled out of people and spent by the system; the strain lands on the person.",
-          glyphs: "Battery icons and percentages, hearts and streak counts, likes and view counts, read receipts, burnout and stress scores, kWh and meter readings — marks that count power in a grid, and marks that count feeling in a person, using the same language for both.",
-          weapon: "Emotional states are treated as a resource that can be taken, measured, and spent. Outrage, anxiety, devotion, and exhaustion are prompted, counted, and converted into engagement, work, and compliance. The language does part of the work: people are described as drained, low, charged, or burned out — electrical words applied to a human state — so being depleted sounds like a personal battery problem, not the result of a system drawing on them.",
-          mechanisms: ["<b>Emotional extraction</b> — strong feeling keeps people watching, posting, arguing, and working longer, so systems prompt it and harvest it as views, data, and output, while the person who supplied it is left depleted.", "<b>Strain as the cost line</b> — the system records what it gained in engagement and hours; the person carries the cost as tiredness, irritability, and depletion.", "<b>One word, two meanings</b> — “energy” names both electricity in a wire and the emotional capacity in a person. Using the same word for both makes the second sound measurable and refillable like the first, and hides where it actually went."],
+          glyphs: "Battery icons and percentages, hearts and streak counts, likes and view counts, read receipts, burnout and stress scores, kWh and meter readings marks that count power in a grid, and marks that count feeling in a person, using the same language for both.",
+          weapon: "Emotional states are treated as a resource that can be taken, measured, and spent. Outrage, anxiety, devotion, and exhaustion are prompted, counted, and converted into engagement, work, and compliance. The language does part of the work: people are described as drained, low, charged, or burned out electrical words applied to a human state so being depleted sounds like a personal battery problem, not the result of a system drawing on them.",
+          mechanisms: ["<b>Emotional extraction</b> strong feeling keeps people watching, posting, arguing, and working longer, so systems prompt it and harvest it as views, data, and output, while the person who supplied it is left depleted.", "<b>Strain as the cost line</b> the system records what it gained in engagement and hours; the person carries the cost as tiredness, irritability, and depletion.", "<b>One word, two meanings</b> “energy” names both electricity in a wire and the emotional capacity in a person. Using the same word for both makes the second sound measurable and refillable like the first, and hides where it actually went."],
+        },
+        {
+          n: "13", name: "Entertainment", sev: 3,
+          mark: '<path d="M17 6c-5.8 0-10 5-10 11.5C7 25 12 31 17 31s10-6 10-13.5C27 11 22.8 6 17 6z"/><path d="M13.4 15.2h.01M20.6 15.2h.01" stroke-width="3.6"/><path d="M13 21.5c1.2 2 6.8 2 8 0"/><path class="ga-stroke" d="M31 17c5.8 0 10 5 10 11.5C41 36 36 42 31 42s-10-6-10-13.5C21 22 25.2 17 31 17z"/><path class="ga-stroke" d="M27.4 26.2h.01M34.6 26.2h.01" stroke-width="3.6"/><path class="ga-stroke" d="M27 35.5c1.2-2 6.8-2 8 0"/>',
+          state: "<b>Flooded.</b> The show never ends, so nothing in it lands; attention is captured, then spent.",
+          glyphs: "Play buttons and progress bars, episode and season numbers, runtimes, ratings stars, box-office figures, streaming charts, marquee billing order the name above the title.",
+          weapon: "The story is consumed as the life. Characters are mourned like people, catchphrases become a shared language, and the schedule of releases organizes the calendar while the feeling the story produced is harvested as the product: attention held is attention sold. A face on the poster confers importance before a word is spoken; billing order decides who matters in the story before the story starts.",
+          mechanisms: ["<b>Attention capture</b> the work is engineered to hold: the cliffhanger, the autoplay next episode, the franchise that cannot conclude because concluding ends the revenue. Stopping is designed to feel like loss.", "<b>The synthetic flood</b> generated content now fills the catalog faster than anyone can watch; the feed of new releases never empties, so choosing replaces watching and nothing is finished.", "<b>Collapse of the shared screen</b> the broadcast audience watched the same thing at the same time; the algorithmic feed gives every viewer a private program. There is no longer a common show to talk about the shared reference dissolves into millions of individual streams."],
         }
       ];
-
-      var CRACKS = {
-        1: '<path d="M70,0 L62,34 L74,62 L66,96 L72,118" fill="none" stroke="var(--crack)" stroke-width="1.6" opacity="0.75"/>',
-        2: '<path d="M52,0 L44,30 L56,58 L46,88 L54,118" fill="none" stroke="var(--crack)" stroke-width="1.7" opacity="0.85"/>' +
-           '<path d="M150,0 L158,26 L146,50 L156,80" fill="none" stroke="var(--crack)" stroke-width="1.3" opacity="0.6"/>' +
-           '<path d="M56,58 L84,66 L104,60" fill="none" stroke="var(--crack)" stroke-width="1.1" opacity="0.5"/>',
-        3: '<path d="M46,0 L38,28 L50,54 L40,84 L48,118" fill="none" stroke="var(--crack)" stroke-width="1.8" opacity="0.95"/>' +
-           '<path d="M140,0 L150,30 L138,58 L150,92 L142,118" fill="none" stroke="var(--crack)" stroke-width="1.6" opacity="0.85"/>' +
-           '<path d="M96,0 L90,22 L102,44 L94,70" fill="none" stroke="var(--crack)" stroke-width="1.3" opacity="0.65"/>' +
-           '<path d="M50,54 L76,62 L90,52 M102,44 L124,52 L138,58 M40,84 L66,90 L90,82" fill="none" stroke="var(--crack)" stroke-width="1.1" opacity="0.55"/>'
-      };
 
       var container = document.getElementById("pillars");
 
@@ -582,17 +876,14 @@
         article.className = "pillar sev-" + s.sev;
         article.id = "pillar-" + s.n;
 
-        var glyphStr = s.glyphBg.map(function (g) { return "<span>" + g + "</span>"; }).join("");
-
         var mechHtml = s.mechanisms.map(function (m) { return "<li>" + m + "</li>"; }).join("");
 
         article.innerHTML =
           '<button class="pillar-head" type="button" aria-expanded="false" aria-controls="detail-' + s.n + '">' +
             '<span class="pillar-visual" aria-hidden="true">' +
-              '<span class="glyphs-bg">' + glyphStr + '</span>' +
-              '<svg class="cracks" viewBox="0 0 200 118" preserveAspectRatio="none">' + CRACKS[s.sev] + '</svg>' +
+              '<span class="glyph-mark"><svg viewBox="0 0 48 48" aria-hidden="true">' + s.mark + '</svg></span>' +
               '<span class="erode"></span>' +
-              '<span class="pillar-num">' + s.n + ' / 12</span>' +
+              '<span class="pillar-num">' + s.n + ' / 13</span>' +
             '</span>' +
             '<span class="pillar-meta" style="display:block">' +
               '<span class="pillar-name">' + s.name + ' <span class="chev" aria-hidden="true">▾</span></span>' +
@@ -615,11 +906,6 @@
           head.setAttribute("aria-expanded", open ? "true" : "false");
         });
 
-        // Open the first pillar by default so the two-layer structure is visible on load.
-        if (i === 0) {
-          article.classList.add("open");
-          head.setAttribute("aria-expanded", "true");
-        }
       });
 
       function setAll(open) {
