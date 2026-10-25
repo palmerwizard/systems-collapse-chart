@@ -503,6 +503,206 @@
       .pillar-detail ul { margin: 0; padding-left: 18px; }
       .pillar-detail li { font-size: 0.95rem; line-height: 1.7; color: var(--ink-2); margin: 4px 0; }
 
+      /* ---------- Timeline ---------- */
+      .timeline-section {
+        margin: 56px 0 8px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        padding: 34px 32px 30px;
+      }
+      .timeline-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: center;
+        text-align: center;
+        gap: 8px 22px;
+        margin-bottom: 6px;
+      }
+      .timeline-head h2 {
+        font-family: "Archivo Black", "Inter", sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+        font-size: clamp(1.5rem, 3.6vw, 2.3rem);
+        line-height: 1;
+        color: var(--ink);
+        margin: 0;
+      }
+      .timeline-head .timeline-tag {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .timeline-caption {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 0.95rem;
+        line-height: 1.65;
+        color: var(--ink-2);
+        max-width: 760px;
+      }
+      .timeline-caption b { color: var(--ink); font-weight: 600; }
+
+      .trust-chart { margin: 30px auto 4px; max-width: 1160px; }
+      .trust-chart svg { display: block; width: 100%; height: auto; }
+      .trust-chart figcaption {
+        margin-top: 10px;
+        font-size: 0.82rem;
+        line-height: 1.6;
+        color: var(--ink-3);
+        text-align: center;
+      }
+
+      .tl-rows { margin-top: 30px; border-top: 1px solid var(--line); }
+      .tl-row { padding: 22px 0 20px; border-bottom: 1px solid var(--line); }
+      .tl-row-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 6px 16px;
+        margin-bottom: 14px;
+      }
+      .tl-row-head .tl-name {
+        font-family: "Archivo Black", "Inter", sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+        font-size: 1rem;
+        line-height: 1.15;
+        color: var(--ink);
+      }
+      .tl-row-head .tl-num {
+        font-family: "Inter", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+      }
+      .tl-row-head .tl-traj {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink-2);
+        border: 1px solid var(--line);
+        padding: 3px 8px;
+      }
+      .tl-track {
+        position: relative;
+        height: 26px;
+        margin: 0 6px;
+      }
+      .tl-track::before {
+        content: "";
+        position: absolute;
+        left: 0; right: 0; top: 50%;
+        height: 1px;
+        background: var(--line);
+      }
+      .tl-track .tl-now {
+        position: absolute;
+        top: 2px; bottom: 2px;
+        width: 1px;
+        background: var(--accent);
+        opacity: 0.55;
+      }
+      .tl-dot {
+        position: absolute;
+        top: 50%;
+        width: 9px; height: 9px;
+        margin: -4.5px 0 0 -4.5px;
+        background: var(--surface);
+        border: 2px solid var(--ink);
+        border-radius: 50%;
+      }
+      .tl-dot.future { border-color: var(--accent); border-style: dashed; background: var(--accent-soft); }
+      .tl-scale {
+        position: relative;
+        height: 18px;
+        margin: 2px 6px 0;
+        font-family: "Inter", sans-serif;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        color: var(--ink-3);
+      }
+      .tl-scale span { position: absolute; transform: translateX(-50%); }
+      .tl-scale span:first-child { transform: none; }
+      .tl-scale span:last-child { transform: translateX(-100%); }
+      .tl-events {
+        list-style: none;
+        margin: 12px 0 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px 34px;
+      }
+      .tl-events li {
+        font-size: 0.9rem;
+        line-height: 1.55;
+        color: var(--ink-2);
+      }
+      .tl-events li b { color: var(--ink); font-weight: 700; white-space: nowrap; }
+      .tl-events li .tl-flag { color: var(--accent); font-weight: 600; }
+      .tl-src {
+        margin: 10px 0 0;
+        font-size: 0.78rem;
+        line-height: 1.6;
+        color: var(--ink-3);
+      }
+      .tl-src a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px; }
+      .tl-src a:hover { color: var(--accent); }
+
+      .tl-patterns {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+      }
+      .tl-patterns h3, .tl-block h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0 0 8px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--line);
+      }
+      .tl-patterns p, .tl-block p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--ink-2); }
+      .tl-patterns p b, .tl-block p b, .tl-block li b { color: var(--ink); font-weight: 600; }
+      .tl-block { margin-top: 30px; }
+      .tl-block ul { margin: 0; padding-left: 18px; }
+      .tl-block li { font-size: 0.95rem; line-height: 1.7; color: var(--ink-2); margin: 4px 0; }
+      .ai-rows { border-top: 1px solid var(--line); }
+      .ai-row {
+        display: grid;
+        grid-template-columns: 190px 1fr 1.6fr;
+        gap: 6px 22px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 0.92rem;
+        line-height: 1.6;
+        color: var(--ink-2);
+      }
+      .ai-row .ai-src { color: var(--ink); font-weight: 600; }
+      .ai-row .ai-fig { color: var(--ink); font-weight: 600; }
+
+      @media (max-width: 680px) {
+        .timeline-section { padding: 22px 14px 16px; }
+        .tl-events { grid-template-columns: 1fr; }
+        .tl-patterns { grid-template-columns: 1fr; }
+        .ai-row { grid-template-columns: 1fr; gap: 2px; }
+        .tl-track { display: none; }
+        .tl-scale { display: none; }
+      }
+
       /* ---------- Foundation / closing ---------- */
       .foundation {
         margin-top: 48px;
@@ -527,6 +727,98 @@
       }
       .foundation p { margin: 0; font-size: 0.98rem; line-height: 1.7; color: var(--ink-2); }
       .foundation p b { color: var(--ink); font-weight: 600; }
+
+      /* ---------- Counter-moves ---------- */
+      .counter-moves {
+        margin-top: 48px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        border-radius: 0;
+        padding: 30px 28px 34px;
+      }
+      .counter-moves h2 {
+        font-family: "Archivo Black", "Inter", sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+        font-size: 1.3rem;
+        line-height: 1.1;
+        color: var(--ink);
+        margin: 0 0 10px;
+      }
+      .cm-intro {
+        margin: 0;
+        font-size: 0.98rem;
+        line-height: 1.7;
+        color: var(--ink-2);
+        max-width: 860px;
+      }
+      .cm-system {
+        border-top: 1px solid var(--line);
+        margin-top: 26px;
+        padding-top: 24px;
+      }
+      .cm-system h3 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 6px 14px;
+        font-family: "Archivo Black", "Inter", sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+        font-size: 1.05rem;
+        line-height: 1.15;
+        color: var(--ink);
+        margin: 0 0 6px;
+      }
+      .cm-num {
+        font-family: "Inter", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+      }
+      .cm-counters {
+        margin: 0 0 14px;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--ink-3);
+      }
+      .cm-label {
+        font-family: "Inter", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 18px 0 7px;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--line);
+      }
+      .cm-system .cm-label:first-of-type { margin-top: 14px; }
+      .counter-moves ul { margin: 0; padding-left: 18px; }
+      .counter-moves li {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--ink-2);
+        margin: 4px 0;
+      }
+      .counter-moves li b { color: var(--ink); font-weight: 600; }
+      .cm-close {
+        margin: 30px 0 0;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+        font-family: "Archivo Black", "Inter", sans-serif;
+        font-weight: 400;
+        font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+        line-height: 1.35;
+        color: var(--ink);
+        text-align: center;
+      }
+      @media (max-width: 680px) {
+        .counter-moves { padding: 22px 18px 26px; }
+      }
 
       footer {
         margin-top: 40px;
@@ -749,15 +1041,328 @@
         <div class="pillars" id="pillars"><!-- pillars injected by script --></div>
       </div>
 
+      <section class="timeline-section" aria-label="Systems collapse timeline, 1955 to 2055">
+        <div class="timeline-head">
+          <h2>The Timeline</h2>
+          <span class="timeline-tag">1955 – 2055 · the same thirteen, over time</span>
+        </div>
+        <p class="timeline-caption">The pillars above are the snapshot. This is the motion: for each system, the counts, prices, and credentials kept rising while outcomes, participation, and confidence fell. The pattern is strong for media, housing, higher education, finance, labor, and community; <b>mixed or partly reversing</b> for health outcomes, suicide, and overdoses in 2023–2024. Figures are a research snapshot (sources read October 23–24, 2026, via web index; not re-verified live). Contested values are flagged where they sit.</p>
+
+        <figure class="trust-chart">
+          <svg viewBox="0 0 1160 430" role="img" aria-label="Line chart of trust in US institutions. Pew trust in the federal government falls from 73 percent in 1958 to 17 percent in 2025. Gallup trust in mass media falls from about 70 percent in the mid-1970s to 28 percent in 2025. Gallup average confidence across 14 institutions sat between 40 and 50 percent in the 1980s and 1990s, fell to a record low of 26 percent in 2023, and stood at 28 percent in 2025.">
+            <!-- gridlines: y = 380 - pct * 4.25 ; x = 90 + (year-1955) * 14.29 -->
+            <g stroke="#33302d" stroke-width="1">
+              <line x1="90" y1="380" x2="1120" y2="380"/>
+              <line x1="90" y1="295" x2="1120" y2="295"/>
+              <line x1="90" y1="210" x2="1120" y2="210"/>
+              <line x1="90" y1="125" x2="1120" y2="125"/>
+              <line x1="90" y1="40" x2="1120" y2="40"/>
+            </g>
+            <g font-family="Inter, sans-serif" font-size="16" fill="#8a8178">
+              <text x="70" y="386" text-anchor="end">0%</text>
+              <text x="70" y="301" text-anchor="end">20%</text>
+              <text x="70" y="216" text-anchor="end">40%</text>
+              <text x="70" y="131" text-anchor="end">60%</text>
+              <text x="70" y="46" text-anchor="end">80%</text>
+              <text x="90" y="412">1960</text>
+              <text x="376" y="412">1980</text>
+              <text x="662" y="412">2000</text>
+              <text x="948" y="412">2020</text>
+            </g>
+            <!-- Gallup average confidence band, 1980s-1990s: 40-50% -->
+            <rect x="376" y="168" width="286" height="42" fill="#cf4a2a" opacity="0.16"/>
+            <text x="519" y="195" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#cf4a2a">Gallup average, 1980s–90s: 40–50%</text>
+            <!-- Pew trust in federal government -->
+            <polyline points="133,70 1077,286 1091,308" fill="none" stroke="#f5f3ef" stroke-width="3"/>
+            <g fill="#f5f3ef">
+              <circle cx="133" cy="70" r="5"/>
+              <circle cx="1077" cy="286" r="5"/>
+              <circle cx="1091" cy="308" r="5"/>
+            </g>
+            <!-- Gallup mass media trust -->
+            <polyline points="361,83 690,155 961,244 1090,261" fill="none" stroke="#cf4a2a" stroke-width="3"/>
+            <g fill="#cf4a2a">
+              <circle cx="361" cy="83" r="5"/>
+              <circle cx="690" cy="155" r="5"/>
+              <circle cx="961" cy="244" r="5"/>
+              <circle cx="1090" cy="261" r="5"/>
+            </g>
+            <!-- Gallup average confidence points: 2022 = 27%, 2023 = 26% (record low), 2024 = 28%, 2025 = 28% -->
+            <polyline points="1048,265 1062,270 1077,261 1091,261" fill="none" stroke="#b3a99e" stroke-width="3" stroke-dasharray="7 5"/>
+            <g fill="#b3a99e">
+              <circle cx="1048" cy="265" r="5"/>
+              <circle cx="1062" cy="270" r="5"/>
+              <circle cx="1077" cy="261" r="5"/>
+              <circle cx="1091" cy="261" r="5"/>
+            </g>
+            <g font-family="Inter, sans-serif" font-size="17" font-weight="600">
+              <text x="145" y="58" fill="#f5f3ef">Trust in federal government (Pew) 73% in 1958 → 17% in 2025</text>
+              <text x="375" y="104" fill="#cf4a2a">Trust in mass media (Gallup) 68–72% in 1972–76 → 28% in 2025</text>
+              <text x="120" y="338" fill="#b3a99e">Average confidence, 14 institutions (Gallup) 26% record low in 2023 · 28% in 2025</text>
+            </g>
+          </svg>
+          <figcaption>Trust lags function, then falls faster: the legitimacy declines are steepest after 2000 and again after 2020, decades after the cost and outcome divergences began. Sources: Pew Research Center; Gallup Confidence in Institutions and mass-media trust series. Note: the Gallup average-confidence composite (the “integrity index” shape the shaded 1980s–90s band and the dashed recent line) is a synthesized comparative shape drawn to show the range and direction, not measured data.</figcaption>
+        </figure>
+
+        <div class="tl-rows" id="tlRows"><!-- timeline rows injected by script --></div>
+
+        <div class="tl-patterns">
+          <div>
+            <h3>Inflection cluster · 1971–1983</h3>
+            <p><b>The “before” picture is pre-1980.</b> Fiat dollar (1971), the Butz cheap-calorie food era (1971–73), the HMO Act (1973), PATCO (1981), payment-by-code DRGs (1983), sentencing reform (1984), and the productivity–pay split that begins in 1979.</p>
+          </div>
+          <div>
+            <h3>Inflection cluster · 1996–2010</h3>
+            <p><b>Symbols scale digitally; functions localize and shrink.</b> Telecom Act (1996), Glass-Steagall repeal (1999), test-count accountability under NCLB (2001), social platforms (2004–07), the financial crisis (2008), the ACA and Citizens United (2010).</p>
+          </div>
+          <div>
+            <h3>2020 · accelerant, not origin</h3>
+            <p>Almost every series was already moving for <b>10–40 years before COVID</b>. The pandemic steepened the media, education, community, mental-health, and participation curves; 2023–24 then produced partial rebounds in health outcomes only.</p>
+          </div>
+          <div>
+            <h3>Where it is not collapse</h3>
+            <p>Life expectancy hit a <b>record 79.0 in 2024</b> and overdose deaths fell 26.2% the largest annual drop recorded. Incarceration is down from its 2008 peak. Higher-ed confidence ticked up, 36% (2024) → 42% (2025). The chart keeps those reversals in, flagged, rather than smoothing them away.</p>
+          </div>
+        </div>
+
+        <div class="tl-block">
+          <h3>Automation exposure the forecasters disagree, and the disagreement is the data</h3>
+          <p style="margin-bottom:14px">These figures measure different things exposure, displacement, technical potential so they are presented as a range, never as one number. The sector gradient is consistent across all of them: <b>highest exposure in finance, law, administration, and media/content; lowest displacement in healthcare, education, and care work.</b></p>
+          <div class="ai-rows">
+            <div class="ai-row"><span class="ai-src">IMF, Jan 2024</span><span class="ai-fig">40% of global jobs exposed; ~60% in advanced economies</span><span>Occupation-level AI exposure (ability overlap), not job loss.</span></div>
+            <div class="ai-row"><span class="ai-src">Goldman Sachs, Apr 2023</span><span class="ai-fig">300M full-time jobs exposed globally; +7% global GDP over 10 years</span><span>Exposure; most exposed jobs are partly, not wholly, automatable.</span></div>
+            <div class="ai-row"><span class="ai-src">Goldman Sachs update, Apr 2026 (as reported)</span><span class="ai-fig">Only ~2.5% of US employment at direct elimination risk</span><span>Elimination risk an order of magnitude below the “exposure” headlines.</span></div>
+            <div class="ai-row"><span class="ai-src">WEF Future of Jobs 2025</span><span class="ai-fig">92M displaced, 170M created by 2030; net +78M; 22% of jobs churned</span><span>Employer-survey expectations, 1,000+ firms.</span></div>
+            <div class="ai-row"><span class="ai-src">McKinsey Global Institute, Nov 2025</span><span class="ai-fig">57% of US work hours technically automatable</span><span>Technical potential (44% AI agents, 13% robots), explicitly not an unemployment forecast.</span></div>
+            <div class="ai-row"><span class="ai-src">MIT / Acemoglu, May 2024</span><span class="ai-fig">~5% of tasks cost-effectively automatable in 10 years; &lt;0.66% TFP gain</span><span>Cost-effective deployment the skeptical bound.</span></div>
+          </div>
+        </div>
+
+        <div class="tl-block">
+          <h3>Open questions read before quoting a number</h3>
+          <ul>
+            <li><b>Housing shortage size:</b> 1.2M (NAHB) to 4.7M (Zillow) depending on definition vacancy-based vs. “missing households.” The timeline shows the Realtor.com series (3.80M in 2024 → 4.03M in 2025) as one method, not the settled figure.</li>
+            <li><b>Institutional investors in housing:</b> nationally, owners of 1,000+ homes hold ~0.5% of the single-family stock (GAO / Urban Institute). The “Wall Street bought the housing stock” claim is not supported nationally; local concentration (e.g. Atlanta) is real.</li>
+            <li><b>“47-second attention span”:</b> Gloria Mark’s mean from logging knowledge workers’ screens a sample, not a population constant. It is labeled as such in the Energy timeline.</li>
+            <li><b>Smartphones and youth mental health:</b> the timing correlation is strong; the causal share is actively disputed in the peer literature. Not presented as settled anywhere on this page.</li>
+            <li><b>Obesity “decline”:</b> 40.3% (2021–23) vs. ~41.9% (2017–20) may be stabilization, a GLP-1 effect, or survey noise. One cycle only.</li>
+            <li><b>No official 2050 forecast exists</b> for mental-health prevalence, the legal system, or social capital; the forward markers on those rows are directional, from the forecasters named in each row.</li>
+          </ul>
+        </div>
+      </section>
+
       <section class="foundation" aria-label="What holds and what does not">
         <h2>The pattern under all thirteen</h2>
         <p><b>The glyph outlives the thing.</b> A grade, a score, a code, a count the mark keeps circulating and deciding long after the underlying function has hollowed out. The system no longer needs the thing it was built to track. It only needs the symbol.</p>
         <p><b>That is why these thirteen are the automation targets.</b> A system that runs on symbols can be run by a machine that manipulates symbols. What gets automated is not the function the function is already gone in most of them. What gets automated is the mark-making itself.</p>
       </section>
 
+      <section class="counter-moves" aria-label="What a normal person can do">
+        <h2>What a normal person can do</h2>
+        <p class="cm-intro">Thirteen systems, one pattern underneath. Every move below counters a specific manipulation named in the pillar above it. No special skill is needed, no special tools, no account. Half the moves need nothing but paper and attention. The other half use a model as a mirror. Either way, the verdict stays with you.</p>
+
+        <div class="cm-system">
+          <h3><span class="cm-num">01 / 13</span> Psychological</h3>
+          <p class="cm-counters">Counters: the psychological operation, the psych tax.</p>
+          <h4 class="cm-label">Without AI</h4>
+          <ul>
+            <li><b>Projection landing on unexamined shadow.</b> When someone blames you for the exact thing they are doing, that is them, not you. Write it down: who, what, when. The written verdict is the storage the next mood cannot rewrite.</li>
+            <li><b>A mood that arrived with the message.</b> Before you answer a charged message, ask whose mood is in your body right now. If the mood arrived with the message, it is not yours. Answer from your own state, or do not answer yet.</li>
+          </ul>
+          <h4 class="cm-label">With AI</h4>
+          <ul>
+            <li><b>Language pre-loaded upstream of thought.</b> Paste the exchange and ask the model to mirror the pattern back: who projected what, where the hook is, which words carry the verdict before you have voted. The model suggests. You decide.</li>
+            <li><b>The watcher kept offline.</b> Ask the model to list the loaded words in a message and what each one smuggles in. Read the raw message first, then the model&#8217;s read. Your read comes before its read.</li>
+          </ul>
+        </div>
+
+        <div class="cm-system">
+          <h3><span class="cm-num">02 / 13</span> Financial</h3>
+          <p class="cm-counters">Counters: the decoupled symbol set, value as database rows.</p>
+          <h4 class="cm-label">Without AI</h4>
+          <ul>
+            <li><b>Value floating on belief plus enforcement.</b> Price everything in hours, not dollars. How many hours of your work does this cost, and what did those hours buy last year against this year. That is the counter-ledger, priced in the territory.</li>
+            <li><b>A symbol with no anchor.</b> Before you trust a number, a balance, a score, a rate, ask what it is anchored to. If the answer is "take it on faith," the anchor is the issuer.</li>
+          </ul>
+          <h4 class="cm-label">With AI</h4>
+          <ul>
+            <li><b>The spread between issuance and adjustment.</b> Hand the model a price, a wage, and a year, and ask it to convert the price into hours and show the math, line by line. Check the arithmetic yourself. The inputs are yours, the verdict is yours.</li>
+            <li><b>Rules rewritten by whoever holds the pen.</b> Ask the model to read a contract or a terms page and list every place one side can rewrite the rules, in plain language. You send nothing until you have read that list.</li>
+          </ul>
+        </div>
+
+        <div class="cm-system">
+          <h3><span class="cm-num">03 / 13</span> Law</h3>
+          <p class="cm-counters">Counters: process as toll gate, the better ledger wins, statute as laundering, the faked delay.</p>
+          <h4 class="cm-label">Without AI</h4>
+          <ul>
+            <li><b>Outcomes going to the better record.</b> Keep a dated ledger of every interaction: the date, the name of the person, what was said, what was promised. The better ledger wins.</li>
+            <li><b>Delay with no mechanism underneath.</b> When a custodian stalls, ask for the mechanism in writing: what step is blocked, by what, until when. A real delay can be named, and its account stays the same when asked twice. A faked delay shifts with the audience.</li>
+            <li><b>The filing treated as the event.</b> Put every complaint in writing, dated, and keep the copy. A verbal request does not exist on the operator&#8217;s ledger.</li>
+          </ul>
+          <h4 class="cm-label">With AI</h4>
+          <ul>
+            <li><b>Escalation with a record.</b> Ask the model to draft the notice or the demand letter from your ledger, in plain language, with the dates and the record cited. The model drafts. You send it.</li>
+          </ul>
+        </div>
+
+        <div class="cm-system">
+          <h3><span class="cm-num">04 / 13</span> Health</h3>
+          <p class="cm-counters">Counters: deferred maintenance as profit, managed symptoms billable indefinitely, the diagnosis as toll gate.</p>
+          <h4 class="cm-label">Without AI</h4>
+          <ul>
+            <li><b>Decay transferred onto the occupant.</b> Keep your own body ledger: dated notes of symptoms, sleep, exercise, what changed and when. The chart can override your report only if you have no record of your own.</li>
+            <li><b>The body as the asset, the patient as the carrier.</b> Exercise daily or every other day. It is the one lever that is not a symbol.</li>
+            <li><b>A resolved patient exits the system.</b> When a plan manages the symptom forever and never names the source, ask for the source, in writing. Fix at the source, not downstream of it.</li>
+          </ul>
+          <h4 class="cm-label">With AI</h4>
+          <ul>
+            <li><b>The pattern with no legal existence.</b> Feed the model your body ledger and ask it to spot the pattern: what changed before the episode, what repeats, what the timeline shows. The model finds the shape. You verdict the cause.</li>
+          </ul>
+        </div>
+
+        <div class="cm-system">
+          <h3><span class="cm-num">05 / 13</span> Education</h3>
+          <p class="cm-counters">Counters: the good-enough-to-pass trap, stalling education.</p>
+          <h4 class="cm-label">Without AI</h4>
+          <ul>
+            <li><b>Passable output, zero learning.</b> Never accept a passable answer as learning. After the model gives you the answer, close the screen and redo the work by hand, from memory. The friction is the learning.</li>
+            <li><b>Functions never built.</b> Practice the three functions on purpose: abstraction (what is the general rule here), quantity (what are the numbers, what do they compare to), verdict (what is the single call, and what would change it).</li>
+          </ul>
+          <h4 class="cm-label">With AI</h4>
+          <ul>
+            <li><b>Oracle atrophies, mirror sharpens.</b> Use the model as a sparring partner, not an answer machine. Ask it to argue the other side, to find the hole in your reasoning, to test the verdict. You keep the verdict.</li>
+            <li><b>The trap at three scales.</b> Ask the model to explain a topic, then explain it back in your own words with the screen closed. If you cannot, you did not learn it.</li>
+          </ul>
+        </div>
+
+        <div class="cm-system">
+          <h3><span class="cm-num">06 / 13</span> Media / Information</h3>
+          <p class="cm-counters">Counters: the authorless operation, the directed flood.</p>
+          <h4 class="cm-label">Without AI</h4>
+          <ul>
+            <li><b>Confession as the payload.</b> Price every confession before you post it: what does this like, comment, or share give away, and who gets it. A confession given with its cost counted is a different substance.</li>
+            <li><b>Volume as a weapon.</b> When the flood hits, slow down instead of speeding up. The flood works by making checking feel impossible. One checked claim breaks the wave.</li>
+            <li><b>The gradient that pleads innocent.</b> Run the function check on any post that moves you fast: what got redefined in the first line, what conclusion does the redefinition carry for free, whose position improves if you believe it, what does it ask you to stop seeing.</li>
+          </ul>
+          <h4 class="cm-label">With AI</h4>
+          <ul>
+            <li><b>Targeting trained on your confessions.</b> Paste a viral post and ask the model to name the move, the redefinition, the free conclusion, the beneficiary, before you form a view. Read the raw post first, then the model&#8217;s read.</li>
+          </ul>
+        </div>
+
+        <div class="cm-system">
+          <h3><span class="cm-num">07 / 13</span> Housing</h3>
+          <p class="cm-counters">Counters: deferred maintenance as profit.</p>
+          <h4 class="cm-label">Without AI</h4>
+          <ul>
+            <li><b>Decay carried by the tenant.</b> Photograph everything, dated: the stain, the wall, the unit, the notice. A dated photo converts private decay into a pattern.</li>
+            <li><b>The cosmetic fix.</b> When the repair is paint over damp or a bent-fin clean, write down what was done and what was not. The cosmetic fix is the tell.</li>
+            <li><b>Channel theater.</b> If the portal does not work, the phone loop never lands, or the vendor was never paid, write that down too. The denial instruments are part of the record.</li>
+          </ul>
+          <h4 class="cm-label">With AI</h4>
+          <ul>
+            <li><b>The pattern with no negotiating existence.</b> Hand the model your dated photos and notices and ask it to build the timeline: what was reported, when, what was done, what is still open. You keep the originals. The model builds the pattern.</li>
+          </ul>
+        </div>
+
+        <div class="cm-system">
+          <h3><span class="cm-num">08 / 13</span> Labor</h3>
+          <p class="cm-counters">Counters: face-saving jobs, temporal displacement.</p>
+          <h4 class="cm-label">Without AI</h4>
+          <ul>
+            <li><b>The role surviving the work.</b> Run the face-saving test on your own role: if the job vanished tomorrow, what outcome would change? The answer tells you what the job actually is.</li>
+            <li><b>Hours eaten, watcher never online.</b> Track your own hours for one week: work, commute, recovery. Read the total. If nothing is left, that is the mechanism, not a personal failure.</li>
+            <li><b>Exhaustion as compliance.</b> Guard one unbooked hour a week: no input, no feed, no task. The watcher needs unbooked time to come online, and the script cannot eat an hour you have already claimed.</li>
+          </ul>
+          <h4 class="cm-label">With AI</h4>
+          <ul>
+            <li><b>The audit of your own week.</b> Ask the model to audit your week from your hour log: where did the hours go, what did they buy, what is left for the watcher. The numbers are yours. The model only adds them.</li>
+          </ul>
+        </div>
+
+        <div class="cm-system">
+          <h3><span class="cm-num">09 / 13</span> Food</h3>
+          <p class="cm-counters">Counters: the decoupled symbol set on labels, slop behind a presentable surface, private auditing only.</p>
+          <h4 class="cm-label">Without AI</h4>
+          <ul>
+            <li><b>The claim consumed as the property.</b> Read the ingredient list, not the claim on the front. The claim is the symbol. The list is the referent.</li>
+            <li><b>Shit in, shit out.</b> Run your own experiment: change one thing, write down how the body responds for two weeks, and trust the log over the label. The first week does not count. The body takes a while to readjust.</li>
+            <li><b>The presentable surface.</b> Cook one meal from raw ingredients a day. The presentable surface cannot survive a kitchen.</li>
+          </ul>
+          <h4 class="cm-label">With AI</h4>
+          <ul>
+            <li><b>Bad labels as the symbols in control.</b> Photograph a label and ask the model to translate it into plain language: what is actually in the package, in order, with the numbers. Check the referent, not the claim.</li>
+          </ul>
+        </div>
+
+        <div class="cm-system">
+          <h3><span class="cm-num">10 / 13</span> Community</h3>
+          <p class="cm-counters">Counters: parasocial substitution, loyalty on a leaderboard, atomize the watchers.</p>
+          <h4 class="cm-label">Without AI</h4>
+          <ul>
+            <li><b>The count read as the relationship.</b> Count the bonds, not the followers: who would show up, who answers, who reciprocates. The count is the substitute. The bond is the thing.</li>
+            <li><b>The seeing that never compounds.</b> Move one conversation a week off the platform and into a room, a call, a walk. Shared infrastructure starts with two people in the same place.</li>
+            <li><b>Attention to reciprocators.</b> Give your attention to the people who reciprocate, and cut the ones who only take. The feed inverts when the attention does.</li>
+          </ul>
+          <h4 class="cm-label">With AI</h4>
+          <ul>
+            <li><b>One-way familiarity.</b> Ask the model to audit your last week of platform time: how much went to people who reciprocate, how much to one-way feeds. The numbers show the substitution.</li>
+          </ul>
+        </div>
+
+        <div class="cm-system">
+          <h3><span class="cm-num">11 / 13</span> Governance</h3>
+          <p class="cm-counters">Counters: perform transparency, flood the zone.</p>
+          <h4 class="cm-label">Without AI</h4>
+          <ul>
+            <li><b>Consent-theater.</b> Read the checkbox before you tick it: what exactly is being consented to, in plain words. A mark in a box is not agreement to terms nobody read.</li>
+            <li><b>The record made uncheckable by volume.</b> Check the record against the territory: one claim, one checkable fact, one source that is not the system describing itself.</li>
+            <li><b>The flood.</b> When the volume floods, slow down instead of speeding up. One checked claim breaks the wave.</li>
+          </ul>
+          <h4 class="cm-label">With AI</h4>
+          <ul>
+            <li><b>The performance filed as the real thing.</b> Paste a ballot measure, a bill summary, or a terms page and ask the model to list what changes, who gains, and what the plain-language version leaves out. Verify the key claim against the primary source yourself.</li>
+          </ul>
+        </div>
+
+        <div class="cm-system">
+          <h3><span class="cm-num">12 / 13</span> Energy</h3>
+          <p class="cm-counters">Counters: emotional extraction, strain as the cost line, one word with two meanings.</p>
+          <h4 class="cm-label">Without AI</h4>
+          <ul>
+            <li><b>Feeling prompted, then harvested.</b> Name the feeling before you act on it: outrage, anxiety, devotion. A named feeling is a choice point. An unnamed one is a prompt.</li>
+            <li><b>The cost line carried by the person.</b> At the end of the day, write down what the system gained from you (hours, posts, attention) and what you carry (tiredness, irritability). The strain is the receipt.</li>
+            <li><b>The highways.</b> Stop feeding one highway for a week: the outrage feed, the loop, the late-night scroll. Note what returns. Starving the highway is the test that it was a highway.</li>
+          </ul>
+          <h4 class="cm-label">With AI</h4>
+          <ul>
+            <li><b>Electrical words on a human state.</b> Ask the model to read your day back to you from your own log: where did the feeling get prompted, what followed, what did it cost. The model mirrors. You verdict whether the feeling was yours.</li>
+          </ul>
+        </div>
+
+        <div class="cm-system">
+          <h3><span class="cm-num">13 / 13</span> Entertainment</h3>
+          <p class="cm-counters">Counters: attention capture, the synthetic flood, the siren song, collapse of the shared screen.</p>
+          <h4 class="cm-label">Without AI</h4>
+          <ul>
+            <li><b>Choosing replacing watching.</b> Finish one thing before starting the next: one film, one season, one book. The flood wins when choosing replaces watching.</li>
+            <li><b>Stopping designed to feel like loss.</b> Turn off autoplay. The switch makes stopping a choice instead of a failure.</li>
+            <li><b>The shared reference dissolved.</b> Watch one thing with another person, at the same time, in the same room. The shared screen is the counter to a million private programs.</li>
+          </ul>
+          <h4 class="cm-label">With AI</h4>
+          <ul>
+            <li><b>Manufactured feeling.</b> Ask the model to list what the recommendation feed is optimizing for: watch time, not enjoyment. Compare it against what you actually liked this month. The gap is the capture.</li>
+          </ul>
+        </div>
+
+        <p class="cm-close">You don&#8217;t fix a system by arguing with it. You stop feeding it.</p>
+      </section>
+
       <footer>
         <span>Order: Psychological · Financial · Law · Health then Education · Media · Housing · Labor · Food · Community · Governance · Energy · Entertainment</span>
         <span>Energy here means emotional energy feeling and attention drawn out of people, not only power in the grid.</span>
+        <span>Timeline anchors run 1955–2055 per system; each row names its sources, and dashed markers are projections, not observations.</span>
       </footer>
     </div>
 
@@ -769,7 +1374,7 @@
           state: "<b>Hollowing.</b> The label ejects what the room cannot hold, and the loop bills on.",
           glyphs: "DSM codes and F-codes, diagnostic labels used as codes, intake forms, symptom checklists, session notes.",
           weapon: "The diagnosis lands as a verdict on the person, not a description of a state. When material exceeds what the practitioner can process, the label converts the system's limit into the person's defect an ejection with paperwork.",
-          mechanisms: ["<b>The therapy loop with no done-criterion</b> no milestone, no discharge test, no finished state; managed process, billed indefinitely.", "<b>Labels that eject</b> what the system cannot hold gets named as pathology and referred out."],
+          mechanisms: ["<b>The psychological operation</b> the psyop's function is to steer, not convince: consent manufactured at the level of the reflex, extraction felt as the person's own choice, language pre-loaded so conclusions arrive pre-steered, and the watcher kept offline.", "<b>The psych tax</b> unaware of your own shadow, you cannot see anyone else's, and you never develop the metacognition to see past what people project onto you. The label converts the system's limit into the person's defect an ejection with paperwork."],
         },
         {
           n: "02", name: "Financial", sev: 3,
@@ -777,7 +1382,7 @@
           state: "<b>Symbol-thin.</b> Nothing behind the row but another row.",
           glyphs: "Digits and balances, credit scores, stock tickers, account numbers, dollar signs, interest rates.",
           weapon: "The score is read as a verdict on the person trustworthy or not, rentable or not, employable or not. The balance is read as worth. A number compiled from records decides access to housing, work, and credit before any human looks.",
-          mechanisms: ["<b>Value as database rows</b> money exists as records in a ledger; the records are the asset.", "<b>Reading-system dependency</b> balances and scores hold only while the system that reads them keeps running. When the reading stops, the record is just marks."],
+          mechanisms: ["<b>The decoupled symbol set</b> the dollar cut loose from gold: value floats on belief plus enforcement, whoever controls the set expands it without limit, and the people furthest from the printer pay through inflation.", "<b>Value as database rows</b> money exists as records in a ledger; the records are the asset.", "<b>Reading-system dependency</b> balances and scores hold only while the system that reads them keeps running. When the reading stops, the record is just marks."],
         },
         {
           n: "03", name: "Law", sev: 2,
@@ -785,7 +1390,7 @@
           state: "<b>Ledger-decided.</b> Outcomes go to whoever keeps the better record.",
           glyphs: "Seals and stamps, signatures, docket numbers, section marks (§), filings, case numbers, notarized marks.",
           weapon: "The filing is treated as the event. What is on the record is what happened; what never got filed did not. A signature binds a person to terms the mark makes real, and the seal turns paper into authority.",
-          mechanisms: ["<b>Process as toll gate</b> every step of the process charges in money, time, or expertise; access to the outcome is priced at the gate.", "<b>The better ledger wins</b> outcomes decided by who documented, timestamped, and kept the cleaner record. The counter-move is a counter-ledger."],
+          mechanisms: ["<b>Process as toll gate</b> every step of the process charges in money, time, or expertise; access to the outcome is priced at the gate.", "<b>The better ledger wins</b> outcomes decided by who documented, timestamped, and kept the cleaner record. The counter-move is a counter-ledger.", "<b>Statute as laundering</b> the legal instrument does not come first: it launders the seizure after the fact, and the laundered law becomes the scaling template."],
         },
         {
           n: "04", name: "Health", sev: 3,
@@ -793,7 +1398,7 @@
           state: "<b>Managed, not resolved.</b> Symptoms maintained on schedule; the source owned by nobody.",
           glyphs: "Rx, ICD-10 codes, chart abbreviations, vital-sign numbers, dosage units, billing codes.",
           weapon: "The diagnosis functions as a billing key first and an explanation second the code is what gets the visit paid. The chart can override the body's own report: what is written in the record is treated as the patient.",
-          mechanisms: ["<b>Deferred maintenance of the body</b> the symptom is managed, the cause is left in place, and the management is what recurs.", "<b>Managed symptoms, billable indefinitely</b> a resolved patient exits the system; a managed one stays on the books."],
+          mechanisms: ["<b>Deferred maintenance as profit</b> the symptom is managed, the cause is left in place, and the management is what recurs: the body is the asset, the decay is carried by the patient.", "<b>Managed symptoms, billable indefinitely</b> a resolved patient exits the system; a managed one stays on the books."],
         },
         {
           n: "05", name: "Education", sev: 3,
@@ -825,7 +1430,7 @@
           state: "<b>Appearance kept, function gone.</b> The role survives the work it was named for.",
           glyphs: "Job titles, badges, employee ID numbers, org-chart boxes, KPI figures, signatures on timesheets.",
           weapon: "The title is handed out as status and read as a verdict on the person holding it senior, junior, essential, redundant. The badge decides where a body is allowed to be, independent of what the body does there.",
-          mechanisms: ["<b>Face-saving jobs</b> roles that exist to preserve appearances: the position protects the organization's story about itself while the actual function hollows out underneath it."],
+          mechanisms: ["<b>Face-saving jobs</b> roles that exist to preserve appearances: the position protects the organization's story about itself while the actual function hollows out underneath it.", "<b>Temporal displacement</b> eat the hours and the watcher never comes online: forty hours plus commute plus recovery leaves no bandwidth to notice the script, let alone name it. Exhaustion is compliance that does not need enforcing."],
         },
         {
           n: "09", name: "Food", sev: 2,
@@ -833,7 +1438,7 @@
           state: "<b>Label trusted, input unexamined.</b> Quality checked only by individuals running private experiments.",
           glyphs: "Label stamps and seals, nutrition panels, claims printed on packages, barcodes, expiration dates, certification marks.",
           weapon: "The claim on the package is consumed as the property of the food. “Natural,” “wholesome,” a green stamp the words do the trusting for the buyer, so the engineered input behind them never gets a question.",
-          mechanisms: ["<b>Engineered inputs behind marketing language</b> the product is formulated for shelf life, cost, and repeat purchase; the language on the front is formulated separately, for the same reasons.", "<b>Private auditing only</b> the system's quality is verified, where it is verified at all, one person at a time, running their own experiment."],
+          mechanisms: ["<b>The decoupled symbol set</b> the label is cut loose from the food: bad labels are the symbols in control, and the claim on the package is consumed as the property of the food.", "<b>Slop behind a presentable surface</b> fast food getting smart: looks more presentable while still the same slop underneath. Shit in, shit out: put shit into the body and the body produces shit, and after a diet change it takes a while for the body to completely readjust.", "<b>Private auditing only</b> the system's quality is verified, where it is verified at all, one person at a time, running their own experiment."],
         },
         {
           n: "10", name: "Community", sev: 3,
@@ -841,7 +1446,7 @@
           state: "<b>Substituted.</b> Local bonds replaced by platform metrics; the count stands in for the bond.",
           glyphs: "Follower counts, friend counts, hearts, verification checkmarks, streak flames, notification badges.",
           weapon: "The count is read as the relationship. A checkmark confers legitimacy, a follower total confers worth, a heart stands in for loyalty and loyalty itself gets enforced on a leaderboard, where standing is visible and ranked.",
-          mechanisms: ["<b>Parasocial substitution</b> one-way familiarity replaces mutual bonds; the feeling of being known is delivered without anyone knowing you.", "<b>Loyalty on a leaderboard</b> devotion measured, displayed, and compared as a number, so the bond becomes a ranking."],
+          mechanisms: ["<b>Parasocial substitution</b> one-way familiarity replaces mutual bonds; the feeling of being known is delivered without anyone knowing you.", "<b>Loyalty on a leaderboard</b> devotion measured, displayed, and compared as a number, so the bond becomes a ranking.", "<b>Atomize the watchers</b> every revelation kept individual and episodic: the seeing never compounds into shared infrastructure, so no common bond forms to replace the metric."],
         },
         {
           n: "11", name: "Governance", sev: 2,
@@ -849,7 +1454,7 @@
           state: "<b>Legitimacy performed.</b> Consent collected as theater while the information space floods.",
           glyphs: "Flags, official seals, ballots, checkboxes, form numbers, voter and citizen ID numbers, signatures on petitions.",
           weapon: "The checkbox is recorded as consent a mark in a box stands in for agreement to terms nobody read. The seal and the flag confer legitimacy on whatever they are stamped onto; the ballot mark counts only if the counting system reads it.",
-          mechanisms: ["<b>Consent-theater</b> agreement performed through interface design: the box, the click, the signature line. The performance is filed as the real thing.", "<b>Directed flooding of its own information space</b> the system depends on a legible public record while volume makes that record uncheckable."],
+          mechanisms: ["<b>Perform transparency</b> consent-theater: agreement performed through interface design, the box, the click, the signature line. The performance is filed as the real thing.", "<b>Flood the zone</b> the system depends on a legible public record while volume makes that record uncheckable: directed flooding of its own information space."],
         },
         {
           n: "12", name: "Energy", sev: 3,
@@ -865,9 +1470,25 @@
           state: "<b>Flooded.</b> The show never ends, so nothing in it lands; attention is captured, then spent.",
           glyphs: "Play buttons and progress bars, episode and season numbers, runtimes, ratings stars, box-office figures, streaming charts, marquee billing order the name above the title.",
           weapon: "The story is consumed as the life. Characters are mourned like people, catchphrases become a shared language, and the schedule of releases organizes the calendar while the feeling the story produced is harvested as the product: attention held is attention sold. A face on the poster confers importance before a word is spoken; billing order decides who matters in the story before the story starts.",
-          mechanisms: ["<b>Attention capture</b> the work is engineered to hold: the cliffhanger, the autoplay next episode, the franchise that cannot conclude because concluding ends the revenue. Stopping is designed to feel like loss.", "<b>The synthetic flood</b> generated content now fills the catalog faster than anyone can watch; the feed of new releases never empties, so choosing replaces watching and nothing is finished.", "<b>Collapse of the shared screen</b> the broadcast audience watched the same thing at the same time; the algorithmic feed gives every viewer a private program. There is no longer a common show to talk about the shared reference dissolves into millions of individual streams."],
+          mechanisms: ["<b>Attention capture</b> the work is engineered to hold: the cliffhanger, the autoplay next episode, the franchise that cannot conclude because concluding ends the revenue. Stopping is designed to feel like loss.", "<b>The synthetic flood</b> generated content now fills the catalog faster than anyone can watch; the feed of new releases never empties, so choosing replaces watching and nothing is finished.", "<b>The siren song (watching)</b> manufactured feeling: if a system can code what makes a song feel good, it does not need the room, the performer, or the night. Not here yet, but the generated art is already starting to show up.", "<b>Collapse of the shared screen</b> the broadcast audience watched the same thing at the same time; the algorithmic feed gives every viewer a private program. There is no longer a common show to talk about the shared reference dissolves into millions of individual streams."],
         }
       ];
+
+      var TRAJ = {
+        "01": "<b>Plateau at high distress; substitution accelerating.</b> Suicide dipped to 13.7 per 100k in 2024 after a 14.2 peak in 2022, and frequent mental distress in 18–29-year-olds eased from 23.7% (2022) to 21.3% (2024) still 8.6 points above 2012. No credible official 2050 prevalence forecast exists; the fastest-scaling layer is the cheapest symbol: teletherapy and AI chatbots scale contacts while clinician supply grows slowly. <span style='color:var(--accent)'>Thin evidence no precise figure for AI-therapy displacement.</span>",
+        "02": "<b>Accelerating financialization, not repair.</b> CBO's extended baseline puts federal debt held by the public at 107% of GDP in 2029 past the WWII peak and 156% in 2055 (about 220% under the alternative scenario). Finance is also among the sectors most exposed to AI task automation in the Citi/Goldman task studies.",
+        "03": "<b>Plateau at high incarceration and a near-zero trial rate; routine legal work automates.</b> Incarceration sits below the 2008 peak but ticked up roughly 2% in 2022–2024, and no reform forecast reverses the plea-to-trial ratio. Secondary AI roundups put ~44% of legal tasks exposed, junior-lawyer and paralegal work first.",
+        "04": "<b>Cost curve accelerating; outcomes plateau with partial repair.</b> CMS actuaries project health spending growing 5.8% a year against GDP at 4.3% (2024–2033), reaching 20.3% of GDP and $8.6T by 2033 the divergence widens even in the good-outcome scenario that produced 2024's record life expectancy.",
+        "05": "<b>K-12 skills plateau at a low level; higher education contracts, with partial trust repair.</b> The college-age population shrinks in the Northeast and Midwest from about 2026 (WICHE), enrollment projections are flat-to-down, and confidence recovered from 36% (2024) to 42% (2025). AI in education skews augmentation over displacement in the WEF/IMF exposure work.",
+        "06": "<b>Accelerating decline for local news; plateau and concentration for national.</b> Medill's Watch List puts 250 counties at high risk about a 40% likelihood of losing their last outlet within a decade. AI-generated content and AI search summaries further cut referral traffic to publishers.",
+        "07": "<b>Plateau at an unaffordable level nationally; partial rental easing.</b> No forecaster in the research set projects price-to-income returning to ~3× by 2035 without a building boom well above 2025 starts (1.36M, down 0.6%). Multifamily deliveries in 2024–25 pushed rental vacancy to 7.2% (Q4 2025).",
+        "08": "<b>Plateau for density and participation; accelerating task restructuring.</b> In the WEF 2025 employer survey, 41% of employers intend workforce reductions from AI automation by 2030, even in a net-positive jobs scenario. BLS projections put growth in healthcare and social assistance, and shrinkage in office and administrative support.",
+        "09": "<b>Possible partial repair on obesity via pharmacology; continued decline on security and consolidation</b> absent policy change. GLP-1 drugs are the largest credible discontinuity analyst projections (Morgan Stanley and others, secondary) put US users near 10% of the population by the mid-2030s, with magnitudes varying widely. <span style='color:var(--accent)'>Contested.</span>",
+        "10": "<b>Continued decline as cohorts replace.</b> No official social-capital forecast exists; the forward indicators are cohort-based each younger cohort reports fewer confidants, lower organizational membership, and more solo living at the same age. AI companions (2023+) are a new substitution risk; the evidence is thin and unquantified.",
+        "11": "<b>Plateau at low legitimacy with high mobilization a “high-turnout, low-trust democracy.”</b> Freedom House, EIU, and V-Dem scores for the US have trended down since about 2010 (exact points differ by index). CBO's demographic anchor: without immigration, the US population begins shrinking in 2033. No source in the research set forecasts democratic breakdown as a base case.",
+        "12": "<b>Accelerating depletion at the manager layer; plateau-high exhaustion overall.</b> No forecaster projects an engagement or attention recovery as a base case. Gallup points to the manager squeeze span of control up from 10.9 to 12.1 direct reports in a year, about +50% since 2013 predicting further manager disengagement. Whether AI tools net-add or net-remove load is contested and thin.",
+        "13": "<b>Plateau at low attendance; accelerating concentration.</b> No credible forecast restores per-capita theatrical attendance even to 2019 levels; trade consensus is a permanently smaller theatrical market (about a $9B domestic ceiling near-term) concentrated in premium screens and event films, while streaming consolidation and AI supply compress median creator income."
+      };
 
       var container = document.getElementById("pillars");
 
@@ -896,6 +1517,7 @@
             '<section><h4>How the glyphs are weaponized</h4><p>' + s.weapon + '</p></section>' +
             '<section><h4>Mechanism</h4><ul>' + mechHtml + '</ul></section>' +
             '<section><h4>State</h4><p>' + s.state + '</p></section>' +
+            (TRAJ[s.n] ? '<section><h4>Trajectory · 1970–2055</h4><p>' + TRAJ[s.n] + '</p></section>' : '') +
           '</div>';
 
         container.appendChild(article);
@@ -907,6 +1529,170 @@
         });
 
       });
+
+
+      var TIMELINES = [
+        { n: "01", name: "Psychological", traj: "Plateau at high distress",
+          events: [
+            [1963, "Community Mental Health Act deinstitutionalization begins, without the promised community system"],
+            [1970, "State psychiatric beds at ~237 per 100,000 (KFF figure) down to 37 per 100,000 by 2020"],
+            [1980, "DSM-III shifts psychiatry to checklist diagnosis"],
+            [1987, "Prozac approved; prescribing becomes the scalable, reimbursable unit"],
+            [1997, "FDA loosens direct-to-consumer drug advertising the US is one of only two high-income countries allowing it"],
+            [2022, "988 lifeline launches; suicide rate peaks at 14.2 per 100k, highest since 1941"],
+            [2024, "Suicide rate dips to 13.7 per 100k (48,824 deaths) CDC/AP describe it as possibly a blip"]
+          ],
+          src: 'Sources: CDC NCHS <a href="https://www.cdc.gov/nchs/blog/posts/2025/09/suicide-rates-largely-unchanged-in-2023-but-still-high.html" target="_blank" rel="noopener">suicide rates</a>; <a href="https://www.beckershospitalreview.com/behavioral-health-mental-health/suicide-rate-falls-slightly-in-2024-cdc/" target="_blank" rel="noopener">Becker\'s on CDC provisional 2024</a>. Antidepressant use: 11.4% of US adults in 2023 (CDC). Both prescriptions and suicide rose 1999–2020 an ecological association; it does not prove the drugs cause suicide.' },
+        { n: "02", name: "Financial", traj: "Accelerating",
+          events: [
+            [1971, "Nixon ends gold convertibility the fiat dollar"],
+            [1980, "Deregulation begins (1980–82); finance was ~3–3.5% of GDP in the 1970s"],
+            [1999, "Gramm-Leach-Bliley repeals the Glass-Steagall separation"],
+            [2007, "Finance reaches 5.9% of GDP; financial profits grew ~800% in real terms 1980–2005 vs. ~250% for non-financial"],
+            [2008, "Global Financial Crisis bailouts, zero rates, QE; bank count already down from 14,483 (1984) toward 4,027 (2023)"],
+            [2023, "SVB, Signature, and First Republic fail the largest bank failures since 2008"],
+            [2025, "Federal debt held by the public reaches ~100% of GDP (~$31.3T)"],
+            [2055, "CBO baseline projection: debt at 156% of GDP", 1]
+          ],
+          src: 'Sources: CBO Long-Term Budget Outlook 2025–2055 <a href="http://www.cbo.gov/publication/61429" target="_blank" rel="noopener">cbo.gov</a>; FDIC data via <a href="https://farmdocdaily.illinois.edu/2024/09/an-explanation-of-the-changes-in-the-number-of-commercial-banks-and-branches-across-the-us.html" target="_blank" rel="noopener">farmdoc daily, U. Illinois</a>. Gallup confidence in banks: 60% (1979) → 28% (2025 release) never recovered to pre-2008 levels.' },
+        { n: "03", name: "Law", traj: "Plateau at low legitimacy",
+          events: [
+            [1970, "Plea bargaining legitimated (Brady v. United States) the trial begins its disappearance"],
+            [1984, "Sentencing Reform Act and guidelines; the mass-incarceration build-out"],
+            [2008, "Incarceration peaks: 2.31 million people, 760 per 100k, 1 in 99 adults (Pew/BJS)"],
+            [2022, "Only 2.5% of federal convictions result from trials (ABA); federal civil trials have fallen from 11.5% (1962) to ~1%"],
+            [2024, "Gallup confidence in the courts hits 35% a record low, down 24 points in four years"]
+          ],
+          src: 'Sources: <a href="https://news.gallup.com/poll/653897/americans-pass-judgment-courts.aspx?version=print" target="_blank" rel="noopener">Gallup, Americans Pass Judgment on Their Courts</a>; <a href="https://www.americanbar.org/groups/criminal_justice/resources/magazine/2024-winter/fourteen-principles-path-forward-plea-bargaining-reform/" target="_blank" rel="noopener">ABA plea-bargaining principles</a>; Duke Judicature on the vanishing trial. The Legal Services Corporation justice-gap figure (~85–92% of low-income civil legal need unmet) is widely cited but was not re-verified against the primary study in this research run.' },
+        { n: "04", name: "Health", traj: "Costs accelerating · outcomes partial repair",
+          events: [
+            [1973, "HMO Act"],
+            [1983, "Medicare prospective payment / DRGs payment by code begins in earnest"],
+            [2010, "Affordable Care Act uninsured rate falls from ~16% toward ~8%; affordability does not track"],
+            [2014, "Life expectancy peaks just under 79, then stalls"],
+            [2021, "Life expectancy bottoms at 76.1–76.4 (COVID + overdoses)"],
+            [2024, "Spending hits $5.3T (18.0% of GDP, CMS) and life expectancy rebounds to 79.0, the highest on record; overdose deaths fall 26.2%"],
+            [2033, "CMS projection: health spending reaches 20.3% of GDP, $8.6T", 1]
+          ],
+          src: 'Sources: CMS National Health Expenditures 2024 and CMS actuaries via <a href="https://medicalxpress.com/news/2025-07-health-expenditure-gdp-growth.html" target="_blank" rel="noopener">Health Affairs / MedicalXpress</a>; OECD Health at a Glance 2025 US spends $14,885 PPP per person, 2.49× the OECD average, for life expectancy 78.4 vs. 81.1. Gallup confidence in the medical system: 80% (1975) → 28% (2025 release).' },
+        { n: "05", name: "Education", traj: "Plateau low · higher-ed contraction",
+          events: [
+            [1970, "Public 4-year tuition: $394 a year (NCES) a full public degree cost ~0.60 years of median household income in 1971"],
+            [1978, "Middle Income Student Assistance Act expands loans to all students"],
+            [1983, "A Nation at Risk"],
+            [2001, "No Child Left Behind test-count accountability"],
+            [2012, "NAEP long-term trend scores for age 13 peak"],
+            [2023, "Age-13 reading score (256) is statistically back at its 1971 level; daily reading for fun has fallen from 35% (1985) to 14%"],
+            [2024, "Student debt $1.64T across ~43M borrowers; in-state public tuition $11,610; total public degree cost = 1.24 years of median household income"]
+          ],
+          src: 'Sources: NCES / College Board via the NAEP reporting at <a href="https://www.chalkbeat.org/2026/06/10/new-naep-scores-show-older-students-struggling-in-reading-and-math/" target="_blank" rel="noopener">Chalkbeat</a>; <a href="https://www.insidehighered.com/news/governance/executive-leadership/2026/08/13/survey-students-trust-college-leaders-more" target="_blank" rel="noopener">Gallup-Lumina via Inside Higher Ed</a> higher-ed confidence 57% (2015) → 36% (2024) → 42% (2025). Grades rose steadily over the same decades while measured scores did not.' },
+        { n: "06", name: "Media / Information", traj: "Local accelerating down · national concentrating",
+          events: [
+            [1972, "Gallup trust in mass media at 68–72% (1972–76)"],
+            [1987, "FCC repeals the Fairness Doctrine"],
+            [1996, "Telecommunications Act loosens ownership caps the consolidation wave"],
+            [2005, "Start of the local-news collapse: 3,500+ newspapers lost by 2025; print circulation down 65–70%; newspaper jobs down ~73–75%"],
+            [2025, "Media trust hits 28% the first sub-30% reading and a record low; Congress cuts $1.1B from public broadcasting; 213 counties have no local news source"]
+          ],
+          src: 'Sources: Medill State of Local News 2024/2025 via <a href="https://dailynorthwestern.com/2025/10/21/campus/local-news-coverage-continues-to-shrink-medill-state-of-local-news-report-finds/" target="_blank" rel="noopener">Daily Northwestern</a>; Gallup mass-media trust series. A 2026 Gallup release reported a rebound to 33% one year, not yet a trend reversal.' },
+        { n: "07", name: "Housing", traj: "Plateau at unaffordable",
+          events: [
+            [1970, "Home price-to-income ratio ~2.6× (late 1960s)"],
+            [1990, "Ratio ~3.2× through the 1990s (Harvard JCHS)"],
+            [2008, "Foreclosure crisis after the 2000s boom pushed the ratio to ~3.9×"],
+            [2010, "A decade of underbuilding begins starts never catch up to household formation"],
+            [2024, "Price-to-income ~5.0×, the highest in the modern series; supply gap 3.80M homes (Realtor.com method)"],
+            [2025, "Supply gap widens to 4.03M on the same method <span class='tl-flag'>estimates range 1.2M (NAHB) to 4.7M (Zillow) by definition</span>"]
+          ],
+          src: 'Sources: Harvard JCHS via <a href="https://housingalmanac.com/explainer/housing-affordability-through-decades" target="_blank" rel="noopener">Housing Almanac synthesis</a> (Census/NAR/Freddie); <a href="https://srnnews.com/us-housing-supply-gap-widens-further-in-2025-realtor-com-says/" target="_blank" rel="noopener">Realtor.com via Reuters</a>. Homeownership rate is nearly flat (~65% in 1975, peak 69% in 2004, ~64–66% now) entry age and debt, not the headline rate, carry the decline.' },
+        { n: "08", name: "Labor", traj: "Plateau · tasks restructuring",
+          events: [
+            [1979, "Productivity and pay decouple: net productivity +59.7% by 2019 vs. typical worker compensation +15.8% (EPI)"],
+            [1981, "Reagan fires the striking PATCO controllers the inflection for private-sector organizing"],
+            [1983, "Union density 20.1% (first BLS comparable series)"],
+            [2000, "Labor-force participation peaks above 67%"],
+            [2025, "Union density 10.0% (14.7M members) private sector 5.9%, public sector ~33%"]
+          ],
+          src: 'Sources: BLS via <a href="https://www.brookings.edu/articles/six-facts-about-union-density-in-the-united-states/" target="_blank" rel="noopener">Brookings Hamilton Project</a>; <a href="https://www.epi.org/productivity-pay-gap/" target="_blank" rel="noopener">EPI productivity–pay gap</a> if pay had tracked productivity since 1979, typical pay would be ~45% (~$30,000) higher. Gallup approval of unions runs ~68–70% even as density sits at 10%: the public approves of unions; almost no private workers are in one.' },
+        { n: "09", name: "Food", traj: "Security declining · obesity contested",
+          events: [
+            [1971, "The Butz era begins (1971–73): “get big or get out” cheap calories and consolidation"],
+            [1980, "Top-4 beef packers hold 36% of steer/heifer purchases ~85% by 2019 (USDA ERS)"],
+            [2000, "Ultra-processed food becomes the majority of the diet (measurement era begins; ~57% of adult calories by 2017–18)"],
+            [2021, "Food insecurity at a historic low: 10.2% of households (USDA ERS)"],
+            [2024, "Food insecurity up to 13.7% (18.3M households); ultra-processed food is 55% of calories age 1+ (CDC NHANES 2021–23); adult obesity 40.3%"],
+            [2025, "USDA announces it will discontinue the annual food-security report after 2024 the measurement itself is retired"]
+          ],
+          src: 'Sources: <a href="http://ers.usda.gov/data-products/chart-gallery/chart-detail?chartId=58378" target="_blank" rel="noopener">USDA ERS food security</a>; CDC NHANES ultra-processed food data via <a href="https://www.earth.com/lifestyle/americas-addiction-to-ultra-processed-foods-is-getting-worse/" target="_blank" rel="noopener">Earth.com</a>; USDA ERS packer concentration via Investigate Midwest.' },
+        { n: "10", name: "Community", traj: "Continued decline",
+          events: [
+            [1972, "45% of Americans say most people can be trusted (GSS) ~30% by 2016"],
+            [2000, "Putnam's Bowling Alone documents the membership collapse from mid-1960s peaks"],
+            [2003, "In-person time with friends: 60 minutes a day down to 20 minutes a day by 2020 (Surgeon General advisory)"],
+            [2020, "Church membership falls below 50% for the first time in Gallup history (47%) it held ~70% from 1937 to 1999"],
+            [2023, "Surgeon General declares loneliness and isolation an epidemic; 49% of adults report 3 or fewer close friends (2021), vs. 27% in 1990"]
+          ],
+          src: 'Source: US Surgeon General\'s Advisory on the Healing Effects of Social Connection (2023), via <a href="https://desdemonadespair.net/2023/05/u-s-surgeon-general-calls-for-action-regarding-the-ongoing-epidemic-of-loneliness-and-isolation/" target="_blank" rel="noopener">summary</a>; Gallup church membership series. Solo-person households: 13% (1960) → 29% (2022).' },
+        { n: "11", name: "Governance", traj: "Low legitimacy · high mobilization",
+          events: [
+            [1958, "Pew trust in the federal government: 73%"],
+            [1976, "Buckley v. Valeo sets the money-as-speech framework"],
+            [2010, "Citizens United and SpeechNow open the super PAC era"],
+            [2013, "Shelby County v. Holder strikes down Voting Rights Act preclearance"],
+            [2021, "January 6 losing-side confidence in vote counts collapses"],
+            [2024, "Turnout 64% (tied second-highest since 1908) while trust sits at 22% participation strong, legitimacy low"],
+            [2025, "Trust in government falls to 17%, near the lowest in ~70 years of Pew measurement"]
+          ],
+          src: 'Sources: Pew via <a href="https://www.fedweek.com/federal-managers-daily-report/trust-in-government-drops-is-near-lowest-ever-measured-says-poll/" target="_blank" rel="noopener">FEDweek</a>; <a href="https://www.pewresearch.org/politics/2025/06/26/voter-turnout-2020-2024/" target="_blank" rel="noopener">Pew voter turnout 2020/2024</a>. Election confidence is now winner-contingent: Republican confidence in in-person counts went 64% (2020) → 94% (2024). Gallup confidence in Congress: 9% in the 2025 release the lowest of any institution.' },
+        { n: "12", name: "Energy", traj: "Depletion accelerating at the manager layer",
+          events: [
+            [1974, "“Burnout” is coined (Freudenberger) there is no 1970s baseline survey for it; early points here are proxies"],
+            [1981, "Maslach Burnout Inventory the symbol gets an instrument"],
+            [2004, "Average attention on a screen: ~2.5 minutes (Gloria Mark, UC Irvine) 75 seconds by ~2012, ~47 seconds in recent years. <span class='tl-flag'>Knowledge-worker logging sample, not a population average</span>"],
+            [2020, "US employee engagement peaks at 36% (Gallup trend)"],
+            [2024, "Global engagement falls to 21% (Gallup); US average screen time ~7 hrs/day; phone checks 205/day (Reviews.org survey self-report, flagged)"],
+            [2025, "Global engagement 20%; manager engagement falls to 22%, from 31% in 2022 a $438B cost at the 2024 reading, ~$10T at low engagement (Gallup)"]
+          ],
+          src: 'Sources: Gallup State of the Global Workplace 2025/2026, via <a href="https://hackspirit.com/burnout-is-no-longer-just-a-workplace-issue-it-is-becoming-a-way-of-life/" target="_blank" rel="noopener">summaries</a>; Gloria Mark attention research. US engagement: 31%, the lowest in a decade, with 17% actively disengaged.' },
+        { n: "13", name: "Entertainment", traj: "Attendance plateau low · concentration up",
+          events: [
+            [1975, "Jaws (1975) and Star Wars (1977) the blockbuster/franchise model is born"],
+            [1999, "Recorded-music revenue peaks (~$14.6B nominal, RIAA) as Napster arrives"],
+            [2002, "Theatrical admissions peak: 1.6B tickets (North America)"],
+            [2007, "Netflix streaming launches; the Marvel Cinematic Universe begins in 2008"],
+            [2019, "Original films fall below 3% of the Top-25 domestic box office (from ~19% in the early 2010s <span class='tl-flag'>single-source slate analysis</span>)"],
+            [2025, "Admissions ~769M; box office ~$8.6–8.9B, still ~20–23% below 2019 despite higher prices; only 53% of US adults visited a theatre at all in the past year (Pew)"]
+          ],
+          src: 'Sources: Comscore/Pew theatrical data via <a href="https://medium.com/@georgewilkes_/why-movie-theaters-are-dying-the-box-office-collapse-9933e76269da" target="_blank" rel="noopener">summary</a>; <a href="https://www.itkmagazine.com/post/the-streaming-divide-why-pop-superstars-earn-millions-while-most-musicians-struggle-to-survive" target="_blank" rel="noopener">Duetti via ITK</a> Spotify paid out >$10B in 2024 in aggregate while the independent-artist average fell to $3.41 per 1,000 streams. Use admissions, not gross, for attendance: gross is inflated by price.' }
+      ];
+
+      (function renderTimelines() {
+        var wrap = document.getElementById("tlRows");
+        if (!wrap) return;
+        var START = 1955, END = 2055;
+        function pct(y) { return ((y - START) / (END - START) * 100).toFixed(2) + "%"; }
+        TIMELINES.forEach(function (t) {
+          var row = document.createElement("div");
+          row.className = "tl-row";
+          var dots = t.events.map(function (e) {
+            return '<span class="tl-dot' + (e[2] ? " future" : "") + '" style="left:' + pct(e[0]) + '"></span>';
+          }).join("");
+          var items = t.events.map(function (e) {
+            return "<li><b>" + e[0] + "</b> " + e[1] + "</li>";
+          }).join("");
+          row.innerHTML =
+            '<div class="tl-row-head">' +
+              '<span class="tl-name">' + t.name + '</span>' +
+              '<span class="tl-num">' + t.n + ' / 13</span>' +
+              '<span class="tl-traj">' + t.traj + '</span>' +
+            '</div>' +
+            '<div class="tl-track" aria-hidden="true"><span class="tl-now" style="left:' + pct(2026) + '"></span>' + dots + '</div>' +
+            '<div class="tl-scale" aria-hidden="true"><span style="left:0">1955</span><span style="left:' + pct(1980) + '">1980</span><span style="left:' + pct(2005) + '">2005</span><span style="left:' + pct(2030) + '">2030</span><span style="left:100%">2055</span></div>' +
+            '<ul class="tl-events">' + items + '</ul>' +
+            '<p class="tl-src">' + t.src + '</p>';
+          wrap.appendChild(row);
+        });
+      })();
 
       function setAll(open) {
         var pillars = container.querySelectorAll(".pillar");
